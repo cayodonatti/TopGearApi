@@ -1,0 +1,23 @@
+version: 1.0.{build}
+nuget:
+  project_feed: true
+before_build:
+- cmd: nuget restore
+build:
+  publish_wap: true
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+  verbosity: minimal
+deploy:
+- provider: Environment
+  name: Trabalho20172
+  on:
+      branch: master
+notifications:
+- provider: Slack
+  incoming_webhook: https://hooks.slack.com/services/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
+  channel: builds-trabalho20172
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false
