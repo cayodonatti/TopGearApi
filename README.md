@@ -1,6 +1,6 @@
 # TopGear - Aluguel de Veículos
-[![Build status](https://ci.appveyor.com/api/projects/status/n7uxhtc4ja5k2lqu?svg=true)](https://ci.appveyor.com/project/cayodonatti/trabalho20172)
-[![Stories in Ready](https://badge.waffle.io/cayodonatti/Trabalho20172.png?label=ready&title=Ready)](http://waffle.io/cayodonatti/Trabalho20172)  
+[![Build status](https://ci.appveyor.com/api/projects/status/7fmtvv4c64t0fngl?svg=true)](https://ci.appveyor.com/project/cayodonatti/topgearapi)
+[![Stories in Ready](https://badge.waffle.io/cayodonatti/TopGearApi.svg?label=ready&title=Ready)](http://waffle.io/cayodonatti/TopGearApi)
   
 ## Minimundo  
 TopGear é uma empresa de aluguel de veículos. Para alugar um veículo, o cliente precisa selecionar uma entre as categorias, um modelo específico ou uma faixa de preços, e à partir desse filtro são apresentados os veículos disponíveis, bem como os dados e preços do serviço, que variam de acordo com o preço, luxo e período de aluguel dos modelos de carro. O cliente seleciona um dos veículos disponíveis e determina então o período de aluguel, os serviços extras que deseja (seguro, combustível) e local de retirada/entrega do veículo.  
@@ -10,4 +10,4 @@ Caso o cliente não tenha cadastro, este deve ser feito, pegando os dados do cli
 Na devolução do veículo, deve ser atualizada a localização do veículo. O veículo só deve ser disponibilizado para aluguel no prazo de um dia útil após a devolução, tempo em que ocorrerá a limpeza e reparos neste.  
 
 ## Throughtput
-[![Throughput Graph](https://graphs.waffle.io/cayodonatti/Trabalho20172/throughput.svg)](https://waffle.io/cayodonatti/Trabalho20172/metrics/throughput)  
+[![Throughput Graph](https://graphs.waffle.io/cayodonatti/TopGearApi/throughput.svg)](https://waffle.io/cayodonatti/TopGearApi/metrics/throughput)
