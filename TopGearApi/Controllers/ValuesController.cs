@@ -10,9 +10,9 @@ namespace TopGearApi.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Json(new string[] { "value1", "value2" });
         }
 
         // GET api/values/5
