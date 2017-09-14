@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -34,6 +35,15 @@ namespace TopGearApi.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
+        }
+
+        [HttpGet]
+        [Route("Test")]
+        public IHttpActionResult Obter()
+        {
+            var content = JsonConvert.SerializeObject(new { ab = "teste1", cd = "teste2 " });
+
+            return base.Json(content);
         }
     }
 }
