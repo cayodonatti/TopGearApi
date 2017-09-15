@@ -41,7 +41,7 @@ namespace TopGearApi.Controllers
         [Route("Test")]
         public IEnumerable<string> Obter()
         {
-            return new List<string { "teste1", "teste2 " };
+            return new List<string> { "teste1", "teste2 " };
         }
     }
 }
