@@ -39,11 +39,9 @@ namespace TopGearApi.Controllers
 
         [HttpGet]
         [Route("Test")]
-        public IHttpActionResult Obter()
+        public Object Obter()
         {
-            var content = JsonConvert.SerializeObject(new { ab = "teste1", cd = "teste2 " });
-
-            return base.Json(content);
+            return new { ab = "teste1", cd = "teste2 " };
         }
     }
 }
