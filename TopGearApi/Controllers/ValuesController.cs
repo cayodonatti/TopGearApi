@@ -1,10 +1,11 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace TopGearApi.Controllers
 {
@@ -41,9 +42,11 @@ namespace TopGearApi.Controllers
         [Route("Test")]
         public IHttpActionResult Obter()
         {
-            var content = JsonConvert.SerializeObject(new { ab = "teste1", cd = "teste2 " });
+            /*var content = JsonConvert.SerializeObject(new { ab = "teste1", cd = "teste2 " });
 
-            return base.Json(content);
+            return base.Json(content);*/
+            // Then I return the list
+            return new JsonResult { Data = new { ab = "teste1", cd = "teste2 " } };
         }
     }
 }
