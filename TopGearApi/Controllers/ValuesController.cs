@@ -39,9 +39,9 @@ namespace TopGearApi.Controllers
 
         [HttpGet]
         [Route("Test")]
-        public Object Obter()
+        public IEnumerable<string> Obter()
         {
-            return new { ab = "teste1", cd = "teste2 " };
+            return new List<string { "teste1", "teste2 " };
         }
     }
 }
