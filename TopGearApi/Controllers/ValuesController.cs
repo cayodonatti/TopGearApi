@@ -38,7 +38,7 @@ namespace TopGearApi.Controllers
         {
         }
 
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         [Route("Test")]
         public IHttpActionResult Obter()
         {
