@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
 
 namespace TopGearApi.Controllers
 {
@@ -38,15 +37,13 @@ namespace TopGearApi.Controllers
         {
         }
 
-        [System.Web.Http.HttpGet]
-        [System.Web.Http.Route("Test")]
-        public ActionResult Obter()
+        [HttpGet]
+        [Route("Test")]
+        public IHttpActionResult Obter()
         {
-            /*var content = JsonConvert.SerializeObject(new { ab = "teste1", cd = "teste2 " });
+            var content = JsonConvert.SerializeObject(new { ab = "teste1", cd = "teste2 " });
 
-            return base.Json(content);*/
-            // Then I return the list
-            return new JsonResult { Data = new { ab = "teste1", cd = "teste2 " } };
+            return base.Json(content);
         }
     }
 }
