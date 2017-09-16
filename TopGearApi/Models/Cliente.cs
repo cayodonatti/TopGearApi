@@ -13,6 +13,6 @@ namespace TopGearApi.Models
         public string Telefone { get; set; }
         public string Endereco { get; set; }
         public string CPF { get; set; }
-        public int Cartao { get; set; }
+        public string Cartao { get; set; }
     }
 }
