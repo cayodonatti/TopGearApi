@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85FC8CE5-6DD0-4D84-9528-934A210FBC85}</ProjectGuid>
+    <ProjectGuid>{246B1165-6A50-4412-B3B6-84ABDDCB0398}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TopGearApi.Api.Tests</RootNamespace>
-    <AssemblyName>TopGearApi.Api.Tests</AssemblyName>
+    <RootNamespace>TopGearApi.Tests</RootNamespace>
+    <AssemblyName>TopGearApi.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TopGearApi.Api\TopGearApi.Api.csproj">
-      <Project>{170CCC07-648F-4306-A948-897E633CF21A}</Project>
-      <Name>TopGearApi.Api</Name>
+    <ProjectReference Include="..\TopGearApi\TopGearApi.csproj">
+      <Project>{E854C7ED-CB34-46D7-82D9-C7D1D5216B43}</Project>
+      <Name>TopGearApi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
