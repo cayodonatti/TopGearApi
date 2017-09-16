@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{246B1165-6A50-4412-B3B6-84ABDDCB0398}</ProjectGuid>
+    <ProjectGuid>{CAF30AC1-F569-410B-8C0B-7A52679C48E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TopGearApi.Tests</RootNamespace>
@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TopGearApi\TopGearApi.csproj">
-      <Project>{E854C7ED-CB34-46D7-82D9-C7D1D5216B43}</Project>
+      <Project>{B04EFCC6-CA07-47BF-BCE5-47C07198EFC8}</Project>
       <Name>TopGearApi</Name>
     </ProjectReference>
   </ItemGroup>

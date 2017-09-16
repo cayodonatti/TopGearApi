@@ -1,118 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Description;
+using TopGearApi.DAO;
 using TopGearApi.Models;
 
 namespace TopGearApi.Controllers
 {
     public class CarroController : ApiController
     {
-        private TopGearApiContext db = new TopGearApiContext();
+        public CarroDao _dao;
 
         // GET: api/Carro
-        public IQueryable<Carro> GetCarroes()
+        public IEnumerable<Carro> Get()
         {
-            return db.Carroes;
+            return _dao.Obter();
         }
 
         // GET: api/Carro/5
-        [ResponseType(typeof(Carro))]
-        public IHttpActionResult GetCarro(int id)
+        public Carro Get(int id)
         {
-            Carro carro = db.Carroes.Find(id);
-            if (carro == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(carro);
-        }
-
-        // PUT: api/Carro/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutCarro(int id, Carro carro)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != carro.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(carro).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CarroExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            return _dao.Obter(id);
         }
 
         // POST: api/Carro
-        [ResponseType(typeof(Carro))]
-        public IHttpActionResult PostCarro(Carro carro)
+        public void Post([FromBody]string value)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        }
 
-            db.Carroes.Add(carro);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = carro.Id }, carro);
+        // PUT: api/Carro/5
+        public void Put(int id, [FromBody]string value)
+        {
         }
 
         // DELETE: api/Carro/5
-        [ResponseType(typeof(Carro))]
-        public IHttpActionResult DeleteCarro(int id)
+        public void Delete(int id)
         {
-            Carro carro = db.Carroes.Find(id);
-            if (carro == null)
-            {
-                return NotFound();
-            }
-
-            db.Carroes.Remove(carro);
-            db.SaveChanges();
-
-            return Ok(carro);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool CarroExists(int id)
-        {
-            return db.Carroes.Count(e => e.Id == id) > 0;
         }
     }
 }
