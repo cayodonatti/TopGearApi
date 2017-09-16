@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using TopGearApi.Domain.Models;
 using TopGearApi.Models;
 
 namespace TopGearApi.Controllers
@@ -60,21 +61,21 @@ namespace TopGearApi.Controllers
         }
 
         // POST: api/Carro
-        public Response<Cliente> Post([FromBody]Carro car)
+        public Response<Carro> Post([FromBody]Carro car)
         {
-            return new Response<Cliente> { Sucesso = true };
+            return new Response<Carro> { Sucesso = true };
         }
 
         // PUT: api/Carro/5
-        public Response<Cliente> Put(int id, [FromBody]Carro car)
+        public Response<Carro> Put(int id, [FromBody]Carro car)
         {
-            return new Response<Cliente> { Sucesso = true };
+            return new Response<Carro> { Sucesso = true };
         }
 
         // DELETE: api/Carro/5
-        public Response<Cliente> Delete(int id)
+        public Response<Carro> Delete(int id)
         {
-            return new Response<Cliente> { Sucesso = true };
+            return new Response<Carro> { Sucesso = true };
         }
     }
 }

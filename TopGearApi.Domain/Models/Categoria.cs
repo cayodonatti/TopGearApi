@@ -4,19 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace TopGearApi.Models
+namespace TopGearApi.Domain.Models
 {
-    public class Locacao
+    public class Categoria
     {
         public int Id { get; set; }
 
         [Required]
-        public DateTime Retirada { get; set; }
-        public DateTime? Entrega { get; set; }
-
+        public double Preco { get; set; }
         [Required]
-        public int Id_Cliente { get; set; }
+        public string Descricao { get; set; }
         [Required]
-        public int Id_Carro { get; set; }
+        public string Itens { get; set; }
     }
 }

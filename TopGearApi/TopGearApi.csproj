@@ -93,11 +93,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Agencia.cs" />
-    <Compile Include="Models\Carro.cs" />
-    <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\Locacao.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TopGearApi.Domain\TopGearApi.Domain.csproj">
+      <Project>{b3445722-cb9f-4c96-a399-e1ac7ef03524}</Project>
+      <Name>TopGearApi.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

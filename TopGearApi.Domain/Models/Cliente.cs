@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TopGearApi.Models
+namespace TopGearApi.Domain.Models
 {
     public class Cliente
     {
