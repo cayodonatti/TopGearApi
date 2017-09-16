@@ -50,7 +50,7 @@ namespace TopGearApi.Controllers
         public Response<Carro> Get(int id)
         {
             return new Response<Carro> {
-                Dados = {
+                Dados = new Carro{
                     Id = id,
                     Marca = "Volkswagen",
                     Modelo = "Gol",
