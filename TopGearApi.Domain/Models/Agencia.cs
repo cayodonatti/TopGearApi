@@ -6,7 +6,7 @@ using System.Web;
 
 namespace TopGearApi.Domain.Models
 {
-    public class Agencia
+    public class Agencia : IEntity
     {
         public int Id { get; set; }
 
@@ -20,5 +20,7 @@ namespace TopGearApi.Domain.Models
         public string Cidade { get; set; }
         [Required]
         public string Estado { get; set; }
+
+        public virtual ICollection<Carro> Carros_Disponiveis { get; set; }
     }
 }
