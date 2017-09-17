@@ -6,7 +6,7 @@ using System.Web;
 
 namespace TopGearApi.Domain.Models
 {
-    public class Categoria
+    public class Categoria : IEntity
     {
         public int Id { get; set; }
 
@@ -16,5 +16,7 @@ namespace TopGearApi.Domain.Models
         public string Descricao { get; set; }
         [Required]
         public string Itens { get; set; }
+
+        public virtual ICollection<Carro> Carros { get; set; }
     }
 }
