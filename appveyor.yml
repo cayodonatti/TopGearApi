@@ -14,10 +14,6 @@ deploy:
   name: TopGearApi
   on:
       branch: master
-- provider: Environment
-  name: TopGearApiDev
-  on:
-      branch: dev
 notifications:
 - provider: Slack
   incoming_webhook: https://hooks.slack.com/services/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
