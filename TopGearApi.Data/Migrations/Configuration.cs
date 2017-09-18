@@ -131,6 +131,15 @@ namespace TopGearApi.Data.Migrations
                     Itens = "Direção Hidráulica"
                 }
                 );
+
+            context.Usuario.AddOrUpdate(
+                new Usuario
+                {
+                    Id = 1,
+                    Nome = "Admin",
+                    Token = "CorrectHorseBatteryStaple"
+                }
+                );
         }
     }
 }

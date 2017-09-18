@@ -59,5 +59,13 @@ namespace TopGearApi.DataAccess
                 context.SaveChanges();
             }
         }
+
+        public static bool CheckToken(string token)
+        {
+            using (var context = new TopGearContext())
+            {
+                return context.Set<Usuario>().Where(u => u.Token == token).ToArray().Length > 0;
+            }
+        }
     }
 }

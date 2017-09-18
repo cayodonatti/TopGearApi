@@ -10,7 +10,7 @@ using TopGearApi.Models;
 
 namespace TopGearApi.Controllers
 {
-    public class TController<T> : ApiController where T : class, IEntity
+    public abstract class TController<T> : ApiController where T : class, IEntity
     {
         // GET: api/T
         public Response<IEnumerable<T>> Get()
@@ -33,25 +33,39 @@ namespace TopGearApi.Controllers
         }
 
         // POST: api/T
-        public Response<T> Post([FromBody]T value)
+        public Response<T> Post([FromBody]Request<T> value)
         {
-            TopGearDA<T>.Insert(value);
-            return new Response<T> { Sucesso = true };
+            if (IsValid(value.Token))
+            {
+                TopGearDA<T>.Insert(value.Dados);
+                return new Response<T> { Sucesso = true };
+            } else return new Response<T> { Sucesso = false, Mensagem = "Token Inválido!" };
         }
 
         // PUT: api/T/5
-        public Response<T> Put(int id, [FromBody]T value)
+        public Response<T> Put(int id, [FromBody]Request<T> value)
         {
-            value.Id = id;
-            TopGearDA<T>.Update(value);
-            return new Response<T> { Sucesso = true };
+            if (IsValid(value.Token))
+            {
+                value.Dados.Id = id;
+                TopGearDA<T>.Update(value.Dados);
+                return new Response<T> { Sucesso = true };
+            } else return new Response<T> { Sucesso = false, Mensagem = "Token Inválido!" };
         }
 
-        // DELETE: api/T/5
-        public Response<T> Delete(int id)
+        // DELETE: api/T
+        public Response<T> Delete([FromBody]Request<int> value)
         {
-            TopGearDA<T>.Delete(id);
-            return new Response<T> { Sucesso = true };
+            if (IsValid(value.Token))
+            {
+                TopGearDA<T>.Delete(value.Dados);
+                return new Response<T> { Sucesso = true };
+            } else return new Response<T> { Sucesso = false, Mensagem = "Token Inválido!" };
+        }
+
+        protected bool IsValid(string token)
+        {
+            return TopGearDA<T>.CheckToken(token);
         }
     }
 }
