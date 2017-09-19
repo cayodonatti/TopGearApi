@@ -71,6 +71,7 @@ namespace TopGearApi.Data.Migrations
                 new Agencia
                 {
                     Id = 1,
+                    Nome = "IFES Serra",
                     Rua = "Rua Agenor Silva",
                     Numero = 150,
                     Bairro = "Manguinhos",
@@ -80,6 +81,7 @@ namespace TopGearApi.Data.Migrations
                 new Agencia
                 {
                     Id = 2,
+                    Nome = "Shopping Vila Velha",
                     Rua = "Avenida Xablau",
                     Numero = 980,
                     Bairro = "Ibes",
