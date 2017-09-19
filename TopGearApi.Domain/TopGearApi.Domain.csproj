@@ -53,6 +53,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Locacao.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
