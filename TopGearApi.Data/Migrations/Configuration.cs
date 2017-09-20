@@ -16,10 +16,22 @@ namespace TopGearApi.Data.Migrations
 
         protected override void Seed(TopGearApi.Data.TopGearContext context)
         {
+            context.Itens.AddOrUpdate(
+                x => x.Descricao,
+                new Item
+                {
+                    Descricao = "Ar Condicionado"
+                },
+                new Item
+                {
+                    Descricao = "Teto Solar"
+                }
+                );
+
             context.Carro.AddOrUpdate(
+                x => x.Placa,
                 new Carro
                 {
-                    Id = 1,
                     Marca = "Chevrolet",
                     Modelo = "Corsa",
                     Placa = "MST1231",
@@ -27,7 +39,6 @@ namespace TopGearApi.Data.Migrations
                 },
                 new Carro
                 {
-                    Id = 2,
                     Marca = "Chevrolet",
                     Modelo = "Camaro",
                     Placa = "ASD1262",
@@ -35,7 +46,6 @@ namespace TopGearApi.Data.Migrations
                 },
                 new Carro
                 {
-                    Id = 3,
                     Marca = "Volkswagen",
                     Modelo = "Gol",
                     Placa = "KHJ5I53",
@@ -43,7 +53,6 @@ namespace TopGearApi.Data.Migrations
                 },
                 new Carro
                 {
-                    Id = 4,
                     Marca = "Porsche",
                     Modelo = "Limousine",
                     Placa = "KSJ9123",
@@ -51,7 +60,6 @@ namespace TopGearApi.Data.Migrations
                 },
                 new Carro
                 {
-                    Id = 5,
                     Marca = "Ferrari",
                     Modelo = "Baccardi",
                     Placa = "MSI2342",
@@ -59,7 +67,6 @@ namespace TopGearApi.Data.Migrations
                 },
                 new Carro
                 {
-                    Id = 3,
                     Marca = "Troller",
                     Modelo = "Troller",
                     Placa = "JSJ1231",
@@ -68,9 +75,9 @@ namespace TopGearApi.Data.Migrations
                 );
 
             context.Agencia.AddOrUpdate(
+                x => x.Nome,
                 new Agencia
                 {
-                    Id = 1,
                     Nome = "IFES Serra",
                     Rua = "Rua Agenor Silva",
                     Numero = 150,
@@ -80,7 +87,6 @@ namespace TopGearApi.Data.Migrations
                 },
                 new Agencia
                 {
-                    Id = 2,
                     Nome = "Shopping Vila Velha",
                     Rua = "Avenida Xablau",
                     Numero = 980,
@@ -91,9 +97,9 @@ namespace TopGearApi.Data.Migrations
                 );
 
             context.Cliente.AddOrUpdate(
+                x => x.CPF,
                 new Cliente
                 {
-                    Id = 1,
                     Nome = "Cayo Donatti",
                     CPF = "00000000272",
                     Endereco = "Rua X",
@@ -102,7 +108,6 @@ namespace TopGearApi.Data.Migrations
                 },
                 new Cliente
                 {
-                    Id = 2,
                     Nome = "Ricardo Sabaini",
                     CPF = "00000000191",
                     Endereco = "Rua Y",
@@ -112,37 +117,33 @@ namespace TopGearApi.Data.Migrations
                 );
 
             context.Categoria.AddOrUpdate(
+                x => x.Descricao,
                 new Categoria
                 {
-                    Id = 1,
                     Descricao = "Luxo",
-                    Preco = 250.15,
-                    Itens = "Ar Condicionado, Vidro Elétrico, Câmbio Automático, Direção Hidráulica"
+                    Preco = 250.15
                 },
                 new Categoria
                 {
-                    Id = 2,
                     Descricao = "Esporte",
-                    Preco = 140.57,
-                    Itens = "Ar Condicionado, Vidro Elétrico, Direção Hidráulica"
+                    Preco = 140.57
                 },
                 new Categoria
                 {
-                    Id = 3,
                     Descricao = "Popular",
-                    Preco = 99.00,
-                    Itens = "Direção Hidráulica"
+                    Preco = 99.00
                 }
                 );
 
             context.Usuario.AddOrUpdate(
+                x => x.Nome,
                 new Usuario
                 {
-                    Id = 1,
                     Nome = "Admin",
                     Token = "CorrectHorseBatteryStaple"
                 }
                 );
+            
         }
     }
 }

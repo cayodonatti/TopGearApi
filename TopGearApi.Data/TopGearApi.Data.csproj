@@ -52,6 +52,10 @@
     <Compile Include="Migrations\201709162334464_InitialMigration.Designer.cs">
       <DependentUpon>201709162334464_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709201152315_AlteracaoModeloDeClasses.cs" />
+    <Compile Include="Migrations\201709201152315_AlteracaoModeloDeClasses.Designer.cs">
+      <DependentUpon>201709201152315_AlteracaoModeloDeClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TopGearContext.cs" />
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709162334464_InitialMigration.resx">
       <DependentUpon>201709162334464_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709201152315_AlteracaoModeloDeClasses.resx">
+      <DependentUpon>201709201152315_AlteracaoModeloDeClasses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

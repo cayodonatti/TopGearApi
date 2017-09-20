@@ -14,8 +14,6 @@ namespace TopGearApi.Domain.Models
         public double Preco { get; set; }
         [Required]
         public string Descricao { get; set; }
-        [Required]
-        public string Itens { get; set; }
 
         public virtual ICollection<Carro> Carros { get; set; }
     }
