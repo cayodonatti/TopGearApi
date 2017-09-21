@@ -20,6 +20,6 @@ namespace TopGearApi.Domain.Models
         public string CPF { get; set; }
         public string Cartao { get; set; }
 
-        public virtual ICollection<Locacao> Locacoes { get; set; }
+        public virtual ICollection<Locacao> Locacoes { get; }
     }
 }
