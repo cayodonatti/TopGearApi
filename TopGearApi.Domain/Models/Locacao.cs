@@ -16,8 +16,8 @@ namespace TopGearApi.Domain.Models
 
         public int ClienteId { get; set;}
         public int CarroId { get; set; }
-        public int Agencia_RetiradaId { get; set; }
-        public int Agencia_EntregaId { get; set; }
+        public int? Agencia_RetiradaId { get; set; }
+        public int? Agencia_EntregaId { get; set; }
         
         public virtual Cliente Cliente { get; set; }
         public virtual Carro Carro { get; set; }

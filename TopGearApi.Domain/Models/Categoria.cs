@@ -15,6 +15,6 @@ namespace TopGearApi.Domain.Models
         [Required]
         public string Descricao { get; set; }
 
-        public virtual ICollection<Carro> Carros { get; }
+        public virtual ICollection<Carro> Carros { get; set; }
     }
 }
