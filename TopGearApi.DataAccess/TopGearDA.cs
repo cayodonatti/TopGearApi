@@ -11,9 +11,14 @@ namespace TopGearApi.DataAccess
 {
     public static class TopGearDA<T> where T : class, IEntity
     {
+        private static DbContext GetContext()
+        {
+            return new TopGearContext();
+        }
+
         public static IEnumerable<T> Get()
         {
-            using (var context = new TopGearContext())
+            using (var context = GetContext())
             {
                 return context.Set<T>().ToList();
             }
@@ -21,7 +26,7 @@ namespace TopGearApi.DataAccess
 
         public static T Get(int id)
         {
-            using (var context = new TopGearContext())
+            using (var context = GetContext())
             {
                 return context.Set<T>().Where(p => p.Id == id).FirstOrDefault();
             }
@@ -29,7 +34,7 @@ namespace TopGearApi.DataAccess
 
         public static void Insert(T entity)
         {
-            using (var context = new TopGearContext())
+            using (var context = GetContext())
             {
                 context.Set<T>().Add(entity);
             }
@@ -37,7 +42,7 @@ namespace TopGearApi.DataAccess
 
         public static void Delete(int id)
         {
-            using (var context = new TopGearContext())
+            using (var context = GetContext())
             {
                 var entity = Get(id);
                 context.Set<T>().Remove(entity);
@@ -47,7 +52,7 @@ namespace TopGearApi.DataAccess
 
         public static void Update(T entity)
         {
-            using (var context = new TopGearContext())
+            using (var context = GetContext())
             {
                 var atual = context.Set<T>().Find(entity.Id);
 
@@ -62,7 +67,7 @@ namespace TopGearApi.DataAccess
 
         public static bool CheckToken(string token)
         {
-            using (var context = new TopGearContext())
+            using (var context = GetContext())
             {
                 return context.Set<Usuario>().Where(u => u.Token == token).ToArray().Length > 0;
             }

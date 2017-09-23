@@ -22,10 +22,11 @@ namespace TopGearApi.Domain.Models
         [Required]
         public int Ano { get; set; }
 
-        public bool EmManutencao { get; set; } = false;
+        public int AgenciaId { get; set; }
+        public int CategoriaId { get; set; }
 
         public virtual Agencia Agencia { get; set; }
         public virtual Categoria Categoria { get; set; }
-        public virtual ICollection<Item> Itens { get; set; }
+        public virtual ICollection<Item> Itens { get; }
     }
 }
