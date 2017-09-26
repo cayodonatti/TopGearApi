@@ -35,42 +35,54 @@ namespace TopGearApi.Data.Migrations
                     Marca = "Chevrolet",
                     Modelo = "Corsa",
                     Placa = "MST1231",
-                    Ano = 2017
+                    Ano = 2017,
+                    AgenciaId = 1,
+                    CategoriaId = 3
                 },
                 new Carro
                 {
                     Marca = "Chevrolet",
                     Modelo = "Camaro",
                     Placa = "ASD1262",
-                    Ano = 2015
+                    Ano = 2015,
+                    AgenciaId = 1,
+                    CategoriaId = 1
                 },
                 new Carro
                 {
                     Marca = "Volkswagen",
                     Modelo = "Gol",
                     Placa = "KHJ5I53",
-                    Ano = 1998
+                    Ano = 1998,
+                    AgenciaId = 1,
+                    CategoriaId = 3
                 },
                 new Carro
                 {
                     Marca = "Porsche",
                     Modelo = "Limousine",
                     Placa = "KSJ9123",
-                    Ano = 2014
+                    Ano = 2014,
+                    AgenciaId = 2,
+                    CategoriaId = 1
                 },
                 new Carro
                 {
                     Marca = "Ferrari",
                     Modelo = "Baccardi",
                     Placa = "MSI2342",
-                    Ano = 2017
+                    Ano = 2017,
+                    AgenciaId = 2,
+                    CategoriaId = 2
                 },
                 new Carro
                 {
                     Marca = "Troller",
                     Modelo = "Troller",
                     Placa = "JSJ1231",
-                    Ano = 2014
+                    Ano = 2014,
+                    AgenciaId = 2,
+                    CategoriaId = 2
                 }
                 );
 

@@ -23,6 +23,6 @@ namespace TopGearApi.Domain.Models
         [Required]
         public string Estado { get; set; }
 
-        public virtual ICollection<Carro> Carros_Disponiveis { get; }
+        public virtual ICollection<Carro> Carros_Disponiveis { get; set; }
     }
 }
