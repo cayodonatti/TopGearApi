@@ -12,24 +12,22 @@ namespace TopGearApi.Controllers
 {
     public class CarroController : TController<Carro>
     {
-        private static CarroDA DA = new CarroDA();
-        
         [HttpGet]
         public IEnumerable<Carro> GetByItem(int id)
         {
-            return DA.GetByItem(id);
+            return CarroDA.GetByItem(id);
         }
 
         [HttpGet]
         public IEnumerable<Carro> GetDisponiveis()
         {
-            return DA.GetDisponiveis();
+            return CarroDA.GetDisponiveis();
         }
 
         [HttpGet]
         public IEnumerable<Carro> GetDisponiveisByAgencia(int id)
         {
-            return DA.GetDisponiveisByAgencia(id);
+            return CarroDA.GetDisponiveisByAgencia(id);
         }
     }
 }
