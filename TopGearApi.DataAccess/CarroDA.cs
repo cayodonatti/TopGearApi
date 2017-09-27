@@ -9,7 +9,7 @@ namespace TopGearApi.DataAccess
 {
     public class CarroDA : TopGearDA<Carro>
     {
-        public IEnumerable<Carro> GetByItem(int ItemId)
+        public static IEnumerable<Carro> GetByItem(int ItemId)
         {
             using (var context = GetContext())
             {
@@ -17,7 +17,7 @@ namespace TopGearApi.DataAccess
             }
         }
 
-        public IEnumerable<Carro> GetDisponiveis()
+        public static IEnumerable<Carro> GetDisponiveis()
         {
             using (var context = GetContext())
             {
@@ -31,7 +31,7 @@ namespace TopGearApi.DataAccess
             }
         }
 
-        public IEnumerable<Carro> GetDisponiveisByAgencia(int AgenciaId)
+        public static IEnumerable<Carro> GetDisponiveisByAgencia(int AgenciaId)
         {
             using (var context = GetContext())
             {
