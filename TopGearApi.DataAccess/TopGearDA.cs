@@ -9,9 +9,9 @@ using TopGearApi.Domain.Models;
 
 namespace TopGearApi.DataAccess
 {
-    public static class TopGearDA<T> where T : class, IEntity
+    public class TopGearDA<T> where T : class, IEntity
     {
-        private static DbContext GetContext()
+        protected static DbContext GetContext()
         {
             return new TopGearContext();
         }

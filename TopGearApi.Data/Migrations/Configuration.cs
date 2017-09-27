@@ -28,6 +28,52 @@ namespace TopGearApi.Data.Migrations
                 }
                 );
 
+            context.Agencia.AddOrUpdate(
+                x => x.Nome,
+                new Agencia
+                {
+                    Id = 1,
+                    Nome = "IFES Serra",
+                    Rua = "Rua Agenor Silva",
+                    Numero = 150,
+                    Bairro = "Manguinhos",
+                    Cidade = "Serra",
+                    Estado = "ES"
+                },
+                new Agencia
+                {
+                    Id = 2,
+                    Nome = "Shopping Vila Velha",
+                    Rua = "Avenida Xablau",
+                    Numero = 980,
+                    Bairro = "Ibes",
+                    Cidade = "Vila Velha",
+                    Estado = "ES"
+                }
+                );
+
+            context.Categoria.AddOrUpdate(
+                x => x.Descricao,
+                new Categoria
+                {
+                    Id = 1,
+                    Descricao = "Luxo",
+                    Preco = 250.15
+                },
+                new Categoria
+                {
+                    Id = 2,
+                    Descricao = "Esporte",
+                    Preco = 140.57
+                },
+                new Categoria
+                {
+                    Id = 3,
+                    Descricao = "Popular",
+                    Preco = 99.00
+                }
+                );
+
             context.Carro.AddOrUpdate(
                 x => x.Placa,
                 new Carro
@@ -86,28 +132,6 @@ namespace TopGearApi.Data.Migrations
                 }
                 );
 
-            context.Agencia.AddOrUpdate(
-                x => x.Nome,
-                new Agencia
-                {
-                    Nome = "IFES Serra",
-                    Rua = "Rua Agenor Silva",
-                    Numero = 150,
-                    Bairro = "Manguinhos",
-                    Cidade = "Serra",
-                    Estado = "ES"
-                },
-                new Agencia
-                {
-                    Nome = "Shopping Vila Velha",
-                    Rua = "Avenida Xablau",
-                    Numero = 980,
-                    Bairro = "Ibes",
-                    Cidade = "Vila Velha",
-                    Estado = "ES"
-                }
-                );
-
             context.Cliente.AddOrUpdate(
                 x => x.CPF,
                 new Cliente
@@ -125,25 +149,6 @@ namespace TopGearApi.Data.Migrations
                     Endereco = "Rua Y",
                     Telefone = "2764654852",
                     Cartao = "1111222233334444"
-                }
-                );
-
-            context.Categoria.AddOrUpdate(
-                x => x.Descricao,
-                new Categoria
-                {
-                    Descricao = "Luxo",
-                    Preco = 250.15
-                },
-                new Categoria
-                {
-                    Descricao = "Esporte",
-                    Preco = 140.57
-                },
-                new Categoria
-                {
-                    Descricao = "Popular",
-                    Preco = 99.00
                 }
                 );
 

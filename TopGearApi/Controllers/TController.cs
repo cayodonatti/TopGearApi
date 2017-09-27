@@ -63,6 +63,7 @@ namespace TopGearApi.Controllers
             } else return new Response<T> { Sucesso = false, Mensagem = "Token Inválido!" };
         }
 
+        [NonAction]
         protected bool IsValid(string token)
         {
             return TopGearDA<T>.CheckToken(token);
