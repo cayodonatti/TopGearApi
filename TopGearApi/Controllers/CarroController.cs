@@ -15,21 +15,36 @@ namespace TopGearApi.Controllers
         private CarroDA DA = new CarroDA();
         
         [HttpGet]
-        public IEnumerable<Carro> GetByItem(int id)
+        [ActionName("ObterPorItem")]
+        public Response<IEnumerable<Carro>> GetByItem(int id)
         {
-            return DA.GetByItem(id);
+            return new Response<IEnumerable<Carro>>
+            {
+                Sucesso = true,
+                Dados = DA.GetByItem(id)
+            };
         }
 
         [HttpGet]
-        public IEnumerable<Carro> GetDisponiveis()
+        [ActionName("ObterDisponiveis")]
+        public Response<IEnumerable<Carro>> GetDisponiveis()
         {
-            return DA.GetDisponiveis();
+            return new Response<IEnumerable<Carro>>
+            {
+                Sucesso = true,
+                Dados = DA.GetDisponiveis()
+            };
         }
 
         [HttpGet]
-        public IEnumerable<Carro> GetDisponiveisByAgencia(int id)
+        [ActionName("ObterDisponiveisPorAgencia")]
+        public Response<IEnumerable<Carro>> GetDisponiveisByAgencia(int id)
         {
-            return DA.GetDisponiveisByAgencia(id);
+            return new Response<IEnumerable<Carro>>
+            {
+                Sucesso = true,
+                Dados = DA.GetDisponiveisByAgencia(id)
+            };
         }
     }
 }
