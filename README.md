@@ -1,7 +1,12 @@
 # TopGear - Aluguel de Veículos
-[![Build status](https://ci.appveyor.com/api/projects/status/7fmtvv4c64t0fngl?svg=true)](https://ci.appveyor.com/project/cayodonatti/topgearapi)
+[![Build status](https://ci.appveyor.com/api/projects/status/7fmtvv4c64t0fngl/branch/master?svg=true&passingText=master%20-%20OK&failingText=master%20-%20FAIL)](https://ci.appveyor.com/project/cayodonatti/topgearapi)
+[![Build status](https://ci.appveyor.com/api/projects/status/7fmtvv4c64t0fngl/branch/dev?svg=true&passingText=dev%20-%20OK&failingText=dev%20-%20FAIL)](https://ci.appveyor.com/project/cayodonatti/topgearapi)  
 [![Stories in Ready](https://badge.waffle.io/cayodonatti/TopGearApi.svg?label=ready&title=Ready)](http://waffle.io/cayodonatti/TopGearApi)
-  
+
+## Integrantes  
+Cayo Donatti  
+Ricardo Sabaini
+
 ## Minimundo  
 TopGear é uma empresa de aluguel de veículos. Para alugar um veículo, o cliente precisa selecionar uma entre as categorias, um modelo específico ou uma faixa de preços, e à partir desse filtro são apresentados os veículos disponíveis, bem como os dados e preços do serviço, que variam de acordo com o preço, luxo e período de aluguel dos modelos de carro. O cliente seleciona um dos veículos disponíveis e determina então o período de aluguel, os serviços extras que deseja (seguro, combustível) e local de retirada/entrega do veículo.  
   
