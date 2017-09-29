@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,22 +12,39 @@ namespace TopGearApi.Controllers
 {
     public class CarroController : TController<Carro>
     {
+        private CarroDA DA = new CarroDA();
+        
         [HttpGet]
-        public IEnumerable<Carro> GetByItem(int id)
+        [ActionName("ObterPorItem")]
+        public Response<IEnumerable<Carro>> GetByItem(int id)
         {
-            return CarroDA.GetByItem(id);
+            return new Response<IEnumerable<Carro>>
+            {
+                Sucesso = true,
+                Dados = DA.GetByItem(id)
+            };
         }
 
         [HttpGet]
-        public IEnumerable<Carro> GetDisponiveis()
+        [ActionName("ObterDisponiveis")]
+        public Response<IEnumerable<Carro>> GetDisponiveis()
         {
-            return CarroDA.GetDisponiveis();
+            return new Response<IEnumerable<Carro>>
+            {
+                Sucesso = true,
+                Dados = DA.GetDisponiveis()
+            };
         }
 
         [HttpGet]
-        public IEnumerable<Carro> GetDisponiveisByAgencia(int id)
+        [ActionName("ObterDisponiveisPorAgencia")]
+        public Response<IEnumerable<Carro>> GetDisponiveisByAgencia(int id)
         {
-            return CarroDA.GetDisponiveisByAgencia(id);
+            return new Response<IEnumerable<Carro>>
+            {
+                Sucesso = true,
+                Dados = DA.GetDisponiveisByAgencia(id)
+            };
         }
     }
 }
