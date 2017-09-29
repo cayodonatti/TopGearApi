@@ -1,6 +1,5 @@
 # TopGear - Aluguel de Veículos
 [![Build status](https://ci.appveyor.com/api/projects/status/7fmtvv4c64t0fngl/branch/master?svg=true&passingText=master%20-%20OK&failingText=master%20-%20FAIL)](https://ci.appveyor.com/project/cayodonatti/topgearapi)
-[![Build status](https://ci.appveyor.com/api/projects/status/7fmtvv4c64t0fngl/branch/dev?svg=true&passingText=dev%20-%20OK&failingText=dev%20-%20FAIL)](https://ci.appveyor.com/project/cayodonatti/topgearapi)  
 [![Stories in Ready](https://badge.waffle.io/cayodonatti/TopGearApi.svg?label=ready&title=Ready)](http://waffle.io/cayodonatti/TopGearApi)
 
 ## Integrantes  
