@@ -12,7 +12,6 @@ namespace TopGearApi.Controllers
 {
     public class CarroController : TController<Carro>
     {
-        private CarroDA DA = new CarroDA();
         
         [HttpGet]
         [ActionName("ObterPorItem")]
@@ -21,7 +20,7 @@ namespace TopGearApi.Controllers
             return new Response<IEnumerable<Carro>>
             {
                 Sucesso = true,
-                Dados = DA.GetByItem(id)
+                Dados = CarroDA.GetByItem(id)
             };
         }
 
@@ -32,7 +31,7 @@ namespace TopGearApi.Controllers
             return new Response<IEnumerable<Carro>>
             {
                 Sucesso = true,
-                Dados = DA.GetDisponiveis()
+                Dados = CarroDA.GetDisponiveis()
             };
         }
 
@@ -43,7 +42,7 @@ namespace TopGearApi.Controllers
             return new Response<IEnumerable<Carro>>
             {
                 Sucesso = true,
-                Dados = DA.GetDisponiveisByAgencia(id)
+                Dados = CarroDA.GetDisponiveisByAgencia(id)
             };
         }
     }
