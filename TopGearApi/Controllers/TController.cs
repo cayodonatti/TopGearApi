@@ -36,32 +36,32 @@ namespace TopGearApi.Controllers
         // POST: api/T
         public Response<T> Post([FromBody]Request<T> value)
         {
-            if (IsValid(value.Token))
+            if (value != null && IsValid(value.Token))
             {
                 TopGearDA<T>.Insert(value.Dados);
                 return new Response<T> { Sucesso = true };
-            } else return new Response<T> { Sucesso = false, Mensagem = "Token Inválido!" };
+            } else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }
 
         // PUT: api/T/5
         public Response<T> Put(int id, [FromBody]Request<T> value)
         {
-            if (IsValid(value.Token))
+            if (value != null && IsValid(value.Token))
             {
                 value.Dados.Id = id;
                 TopGearDA<T>.Update(value.Dados);
                 return new Response<T> { Sucesso = true };
-            } else return new Response<T> { Sucesso = false, Mensagem = "Token Inválido!" };
+            } else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }
 
         // DELETE: api/T
         public Response<T> Delete([FromBody]Request<int> value)
         {
-            if (IsValid(value.Token))
+            if (value != null && IsValid(value.Token))
             {
                 TopGearDA<T>.Delete(value.Dados);
                 return new Response<T> { Sucesso = true };
-            } else return new Response<T> { Sucesso = false, Mensagem = "Token Inválido!" };
+            } else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }
 
         [NonAction]
