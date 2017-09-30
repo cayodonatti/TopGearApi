@@ -22,7 +22,8 @@ namespace TopGearApi.Controllers
             };
         }
 
-        // GET: api/T/5
+        // GET: api/T/PorId/5
+        [ActionName("PorId")]
         public Response<T> Get(int id)
         {
             return new Response<T>
