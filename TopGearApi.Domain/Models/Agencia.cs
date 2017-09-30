@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace TopGearApi.Domain.Models
@@ -23,6 +24,7 @@ namespace TopGearApi.Domain.Models
         [Required]
         public string Estado { get; set; }
 
+        [IgnoreDataMember]
         public virtual ICollection<Carro> Carros_Disponiveis { get; set; }
     }
 }

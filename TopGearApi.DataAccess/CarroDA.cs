@@ -41,14 +41,14 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                return context.Set<Carro>()
-                    .Join(context.Set<Locacao>(),
-                               c => c,
-                               l => l.Carro,
-                               (c, l) => new { c, l }).DefaultIfEmpty()
-                    .Where(x => x.l == null || x.l.Finalizada)
-                    .Select(x => x.c)
-                    .Where(c => c.AgenciaId == AgenciaId).ToList();
+                return (
+                        from c in context.Set<Carro>()
+                        join l in context.Set<Locacao>() on c equals l.Carro into cl
+                        from x in cl.DefaultIfEmpty()
+                        where (x == null || x.Finalizada == false) && c.AgenciaId == AgenciaId
+                        select c
+                        )
+                        .ToList();
             }
         }
     }

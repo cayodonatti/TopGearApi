@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace TopGearApi.Domain.Models
@@ -25,8 +26,11 @@ namespace TopGearApi.Domain.Models
         public int AgenciaId { get; set; }
         public int CategoriaId { get; set; }
 
+        [IgnoreDataMember]
         public virtual Agencia Agencia { get; set; }
+        [IgnoreDataMember]
         public virtual Categoria Categoria { get; set; }
+        [IgnoreDataMember]
         public virtual ICollection<Item> Itens { get; set; }
     }
 }
