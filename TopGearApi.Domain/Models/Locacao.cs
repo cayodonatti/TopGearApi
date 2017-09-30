@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace TopGearApi.Domain.Models
@@ -21,10 +22,14 @@ namespace TopGearApi.Domain.Models
         public int? Agencia_EntregaId { get; set; }
 
         public bool Finalizada { get; set; }
-        
+
+        [IgnoreDataMember]
         public virtual Cliente Cliente { get; set; }
+        [IgnoreDataMember]
         public virtual Carro Carro { get; set; }
+        [IgnoreDataMember]
         public virtual Agencia Agencia_Retirada { get; set; }
+        [IgnoreDataMember]
         public virtual Agencia Agencia_Entrega { get; set; }
     }
 }
