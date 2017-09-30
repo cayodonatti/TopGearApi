@@ -82,8 +82,8 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Corsa",
                     Placa = "MST1231",
                     Ano = 2017,
-                    AgenciaId = 1,
-                    CategoriaId = 3
+                    AgenciaId = context.Agencia.Where(a => a.Nome == "IFES Serra").FirstOrDefault().Id,
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
                 },
                 new Carro
                 {
@@ -91,8 +91,8 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Camaro",
                     Placa = "ASD1262",
                     Ano = 2015,
-                    AgenciaId = 1,
-                    CategoriaId = 1
+                    AgenciaId = context.Agencia.Where(a => a.Nome == "IFES Serra").FirstOrDefault().Id,
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
                 },
                 new Carro
                 {
@@ -100,8 +100,8 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Gol",
                     Placa = "KHJ5I53",
                     Ano = 1998,
-                    AgenciaId = 1,
-                    CategoriaId = 3
+                    AgenciaId = context.Agencia.Where(a => a.Nome == "IFES Serra").FirstOrDefault().Id,
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
                 },
                 new Carro
                 {
@@ -109,8 +109,8 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Limousine",
                     Placa = "KSJ9123",
                     Ano = 2014,
-                    AgenciaId = 2,
-                    CategoriaId = 1
+                    AgenciaId = context.Agencia.Where(a => a.Nome == "Shopping Vila Velha").FirstOrDefault().Id,
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
                 },
                 new Carro
                 {
@@ -118,8 +118,8 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Baccardi",
                     Placa = "MSI2342",
                     Ano = 2017,
-                    AgenciaId = 2,
-                    CategoriaId = 2
+                    AgenciaId = context.Agencia.Where(a => a.Nome == "Shopping Vila Velha").FirstOrDefault().Id,
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id
                 },
                 new Carro
                 {
@@ -127,8 +127,8 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Troller",
                     Placa = "JSJ1231",
                     Ano = 2014,
-                    AgenciaId = 2,
-                    CategoriaId = 2
+                    AgenciaId = context.Agencia.Where(a => a.Nome == "Shopping Vila Velha").FirstOrDefault().Id,
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id
                 }
                 );
 
