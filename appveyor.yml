@@ -1,11 +1,6 @@
 version: 1.0.{build}
 nuget:
   project_feed: true
-sonarqube:
-    organization: "LEDS"
-    token:
-      secure: 1dsvLopQ6y/+EwsLyj3zF978RED1Nw1wzRuTJBUHQj576US6OyYOBt/R7xls/EE5lyuVaNEcsN1OcDNuE1THJIQiXSqn2byYgjlPkfVsWf8Dif8JsjZigtGpW3i7FL5l6YNOw4dgMide/9Qhny6pEcuwNpLhLDBWISAfYX2DfArfEAKZROp3roiDG1sf6GZX98BMH1MTvQU8+OkPoudxNZJZxF+XO3Anjd0kLFuwiSn4B56iwnAdiNn3P1j/S5clNSBpo37npr9C76ZDV0cYugxD+apQrm/rkfrRaQ7uByRGHwUrYdgnuI80WVLpj1AoxnoE7AdZo3dgZifhnrD/y9R2UOHzGK1tvLVnK+EvDVsTTmUry8gVgpANAVpQBmio6W9cHNmMcMD19oWGm2cpcf8WRz3dXZ73g5eUoSf4IcSTM3rGdNyVH9sEA25AwUU1KVdJLWmPRUOO5VQfrY1kMfFpSUsjcB25Mvyz3b3Runh14S0dJtDQTZ/KxxhD7toQ1ENrC+/PH/S3ELQxj5sNtpuN8rGdPa6WFCOYUWQK5oFUTz5jhxk1SMbRNWMwnAx+u1DThkAABfY3WlewtehDP/vKlaIfSif/vhFFtNRP0fPSxmJS4H022Xg2fXcV2shKoNz47xU6T8rHGUaHesRO6A7ZnWQ4OwNQ+qN6kPK7H+0=  
-  
 before_build:
 - cmd: nuget restore
 build_script:
