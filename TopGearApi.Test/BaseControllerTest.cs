@@ -16,7 +16,7 @@ namespace TopGearApi.Test
             Assert.IsTrue(response.Sucesso);
             Assert.IsTrue(response.Dados.Count > 0);
 
-            var objeto = response.Dados[1];
+            var objeto = response.Dados[0];
 
             var response2 = TopGearApi<T>.Get($"{path}/PorId/{objeto.Id}");
             Assert.IsTrue(response2.Sucesso);
