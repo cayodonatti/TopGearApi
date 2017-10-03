@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace TopGearApi.Test
 {
+    [TestClass]
     public class AgenciaControllerTest : BaseControllerTest<Agencia>
     {
         public AgenciaControllerTest()

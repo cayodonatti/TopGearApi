@@ -8,6 +8,7 @@ using TopGearApi.Domain.Models;
 
 namespace TopGearApi.Test
 {
+    [TestClass]
     public class LocacaoControllerTest : BaseControllerTest<Locacao>
     {
         public LocacaoControllerTest()
