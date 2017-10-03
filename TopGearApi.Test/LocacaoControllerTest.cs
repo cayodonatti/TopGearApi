@@ -19,7 +19,7 @@ namespace TopGearApi.Test
         [TestMethod]
         public void GetLocacao()
         {
-            Get();
+            //Get();
         }
     }
 }
