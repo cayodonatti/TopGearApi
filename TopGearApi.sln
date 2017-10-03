@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopGearApi", "TopGearApi\TopGearApi.csproj", "{B04EFCC6-CA07-47BF-BCE5-47C07198EFC8}"
 EndProject
@@ -10,6 +10,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopGearApi.Data", "TopGearApi.Data\TopGearApi.Data.csproj", "{680CB425-49ED-452A-8CBA-DBD9AE20C8AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopGearApi.DataAccess", "TopGearApi.DataAccess\TopGearApi.DataAccess.csproj", "{AAD388A7-9358-4A8E-A241-97D560F60900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopGearApi.Test", "TopGearApi.Test\TopGearApi.Test.csproj", "{B89E77D0-26EF-448B-B70E-155769EF478D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B3445722-CB9F-4C96-A399-E1AC7EF03524} = {B3445722-CB9F-4C96-A399-E1AC7EF03524}
+		{B04EFCC6-CA07-47BF-BCE5-47C07198EFC8} = {B04EFCC6-CA07-47BF-BCE5-47C07198EFC8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,10 @@ Global
 		{AAD388A7-9358-4A8E-A241-97D560F60900}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD388A7-9358-4A8E-A241-97D560F60900}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD388A7-9358-4A8E-A241-97D560F60900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89E77D0-26EF-448B-B70E-155769EF478D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89E77D0-26EF-448B-B70E-155769EF478D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89E77D0-26EF-448B-B70E-155769EF478D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89E77D0-26EF-448B-B70E-155769EF478D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
