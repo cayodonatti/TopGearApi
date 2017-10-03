@@ -3,6 +3,11 @@ nuget:
   project_feed: true
 before_build:
 - cmd: nuget restore
+build_script:
+  - choco install "msbuild-sonarqube-runner" -y
+  - MSBuild.SonarQube.Runner.exe begin /k:"topgearapi" /o:"cayodonatti-github" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=3b7e611dca77dcb4dbeeecfbd2eaa9564b13c3f8"
+  - msbuild "TopGearApi.sln"
+  - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=3b7e611dca77dcb4dbeeecfbd2eaa9564b13c3f8"
 build:
   publish_wap: true
   publish_nuget: true
