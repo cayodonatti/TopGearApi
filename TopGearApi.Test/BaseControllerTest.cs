@@ -10,6 +10,7 @@ namespace TopGearApi.Test
     {
         protected string path;
 
+        [TestMethod]
         public void Get()
         {
             var response = TopGearApi<List<T>>.Get(path);

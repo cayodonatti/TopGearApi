@@ -13,11 +13,5 @@ namespace TopGearApi.Test
         {
             this.path = "agencia";
         }
-
-        [TestMethod]
-        public void GetAgencia()
-        {
-            Get();
-        }
     }
 }

@@ -15,11 +15,5 @@ namespace TopGearApi.Test
         {
             this.path = "locacao";
         }
-
-        [TestMethod]
-        public void GetLocacao()
-        {
-            Get();
-        }
     }
 }
