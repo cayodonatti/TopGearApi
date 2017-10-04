@@ -12,7 +12,9 @@ namespace TopGearApi.Controllers
 {
     public class LocacaoController : TController<Locacao>
     {
-        public new Response<Locacao> Post([FromBody]Request<Locacao> value)
+        [HttpPost]
+        // POST: api/Locacao
+        public override Response<Locacao> Post([FromBody]Request<Locacao> value)
         {
             if (value != null && IsValid(value.Token))
             {

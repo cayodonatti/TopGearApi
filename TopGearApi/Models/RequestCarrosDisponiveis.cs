@@ -7,7 +7,7 @@ using TopGearApi.Domain.Models;
 
 namespace TopGearApi.Models
 {
-    public class RequestCarrosDisponiveis : Request<List<Carro>>
+    public class RequestCarrosDisponiveis : BaseRequest
     {
         [Required]
         public DateTime Inicial { get; set; }

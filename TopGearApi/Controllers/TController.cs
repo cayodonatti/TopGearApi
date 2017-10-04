@@ -34,7 +34,7 @@ namespace TopGearApi.Controllers
         }
 
         // POST: api/T
-        public Response<T> Post([FromBody]Request<T> value)
+        public virtual Response<T> Post([FromBody]Request<T> value)
         {
             if (value != null && IsValid(value.Token))
             {
