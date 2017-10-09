@@ -38,7 +38,7 @@ namespace TopGearApi.Test.Utils
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync(relativePath + "/" + id.ToString()).Result;
+            HttpResponseMessage response = client.GetAsync(relativePath + "/PorId/" + id.ToString()).Result;
             if (response.IsSuccessStatusCode)
             {
                 var result = response.Content.ReadAsAsync<Response<T>>().Result;
