@@ -1,8 +1,8 @@
 # TopGear - Aluguel de Veículos
-http://topgearwebsite.azurewebsites.net/
 [![Build status](https://ci.appveyor.com/api/projects/status/7fmtvv4c64t0fngl/branch/master?svg=true&passingText=master%20-%20OK&failingText=master%20-%20FAIL)](https://ci.appveyor.com/project/cayodonatti/topgearapi)
 [![Quality Gate](https://sonarqube.com/api/badges/gate?key=topgearapi)](https://sonarqube.com/dashboard/index/topgearapi)
 [![Stories in Ready](https://badge.waffle.io/cayodonatti/TopGearApi.svg?label=ready&title=Ready)](http://waffle.io/cayodonatti/TopGearApi)
+http://topgearwebsite.azurewebsites.net/
 
 ## Integrantes  
 Cayo Donatti  
