@@ -60,7 +60,13 @@ namespace TopGearApi.Controllers
         {
             if (value != null && IsValid(value.Token))
             {
-                TopGearDA<T>.Delete(value.Dados);
+                try {
+                    TopGearDA<T>.Delete(value.Dados);
+                }
+                catch (Exception ex)
+                {
+                    return new Response<T> { Sucesso = false, Mensagem = "Erro no processamento: Id = " + value.Dados };
+                }
                 return new Response<T> { Sucesso = true };
             } else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }

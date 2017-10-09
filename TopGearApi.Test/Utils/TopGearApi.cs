@@ -41,7 +41,8 @@ namespace TopGearApi.Test.Utils
             HttpResponseMessage response = client.GetAsync(relativePath + "/" + id.ToString()).Result;
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsAsync<Response<T>>().Result;
+                var result = response.Content.ReadAsAsync<Response<T>>().Result;
+                return result;
             }
             else return new Response<T> { Sucesso = false };
         }
@@ -51,10 +52,11 @@ namespace TopGearApi.Test.Utils
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.PostAsJsonAsync(JsonConvert.SerializeObject(MakeRequest(objeto)), relativePath).Result;
+            HttpResponseMessage response = client.PostAsJsonAsync(relativePath, MakeRequest(objeto)).Result;
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsAsync<Response<int>>().Result;
+                var result = response.Content.ReadAsAsync<Response<int>>().Result;
+                return result;
             }
             else return new Response<int> { Sucesso = false };
         }
@@ -64,11 +66,12 @@ namespace TopGearApi.Test.Utils
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.PutAsJsonAsync(JsonConvert.SerializeObject(MakeRequest(objeto)),
-                                                                    relativePath + "/" + id.ToString()).Result;
+            HttpResponseMessage response = client.PutAsJsonAsync(relativePath + "/Put/" + id.ToString(), 
+                                                                    MakeRequest(objeto)).Result;
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsAsync<Response<T>>().Result;
+                var result = response.Content.ReadAsAsync<Response<T>>().Result;
+                return result;
             }
             else return new Response<T> { Sucesso = false };
         }
@@ -82,13 +85,14 @@ namespace TopGearApi.Test.Utils
             {
                 Content = new StringContent(JsonConvert.SerializeObject(TopGearApi<int>.MakeRequest(id)), Encoding.UTF8, "application/json"),
                 Method = HttpMethod.Delete,
-                RequestUri = new Uri("[YOUR URL GOES HERE]")
+                RequestUri = new Uri(client.BaseAddress + relativePath + "/Delete")
             };
 
             HttpResponseMessage response = client.SendAsync(request).Result;
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsAsync<Response<T>>().Result;
+                var result = response.Content.ReadAsAsync<Response<T>>().Result;
+                return result;
             }
             else return new Response<T> { Sucesso = false };
         }
