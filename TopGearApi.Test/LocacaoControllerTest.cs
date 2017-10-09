@@ -17,27 +17,27 @@ namespace TopGearApi.Test
             this.path = "locacao";
         }
 
-        [TestMethod]
-        public void Post_Locacao()
-        {
-            List<Carro> carros = TopGearApi<List<Carro>>.Get("carro/obterdisponiveis").Dados;
-            Locacao l = new Locacao
-            {
-                CarroId = carros.First().Id,
-                ClienteId = TopGearApi<List<Cliente>>.Get("cliente").Dados.First().Id,
-                Agencia_EntregaId = TopGearApi<List<Agencia>>.Get("agencia").Dados.First().Id,
-                Agencia_RetiradaId = TopGearApi<List<Agencia>>.Get("agencia").Dados.First().Id,
-                Retirada = new DateTime(2017, 10, 15),
-                Entrega = new DateTime(2017, 10, 20)
-            };
+        //[TestMethod]
+        //public void Post_Locacao()
+        //{
+        //    List<Carro> carros = TopGearApi<List<Carro>>.Get("carro/obterdisponiveis").Dados;
+        //    Locacao l = new Locacao
+        //    {
+        //        CarroId = carros.First().Id,
+        //        ClienteId = TopGearApi<List<Cliente>>.Get("cliente").Dados.First().Id,
+        //        Agencia_EntregaId = TopGearApi<List<Agencia>>.Get("agencia").Dados.First().Id,
+        //        Agencia_RetiradaId = TopGearApi<List<Agencia>>.Get("agencia").Dados.First().Id,
+        //        Retirada = new DateTime(2017, 10, 15),
+        //        Entrega = new DateTime(2017, 10, 20)
+        //    };
 
-            var Id = this.Post(l);
+        //    var Id = this.Post(l);
 
-            Assert.IsFalse(l.CarroId == carros.Last().Id);
-            l.CarroId = carros.Last().Id;
-            this.Update(Id, l, path);
+        //    Assert.IsFalse(l.CarroId == carros.Last().Id);
+        //    l.CarroId = carros.Last().Id;
+        //    this.Update(Id, l, path);
 
-            this.Delete(Id, path);
-        }
+        //    this.Delete(Id, path);
+        //}
     }
 }
