@@ -47,7 +47,7 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                var entity = Get(id);
+                var entity = context.Set<T>().SingleOrDefault(t => t.Id == id);
                 context.Set<T>().Remove(entity);
                 context.SaveChanges();
             }
