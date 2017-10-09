@@ -26,24 +26,24 @@ namespace TopGearApi.Controllers
 
         [HttpGet]
         [ActionName("ObterDisponiveis")]
-        public Response<IEnumerable<Carro>> GetDisponiveis()
+        public Response<IEnumerable<Carro>> GetDisponiveis([FromBody] RequestCarrosDisponiveis req)
         {
-            return new Response<IEnumerable<Carro>>
+            if (ModelState.IsValid)
             {
-                Sucesso = true,
-                Dados = CarroDA.GetDisponiveis()
-            };
-        }
-
-        [HttpGet]
-        [ActionName("ObterDisponiveisPorAgencia")]
-        public Response<IEnumerable<Carro>> GetDisponiveisByAgencia(int id)
-        {
-            return new Response<IEnumerable<Carro>>
+                return new Response<IEnumerable<Carro>>
+                {
+                    Sucesso = true,
+                    Dados = CarroDA.GetDisponiveis(req.Inicial, req.Final, req.AgenciaId)
+                };
+            }
+            else
             {
-                Sucesso = true,
-                Dados = CarroDA.GetDisponiveisByAgencia(id)
-            };
+                return new Response<IEnumerable<Carro>>
+                {
+                    Sucesso = false,
+                    Mensagem = "Requisição Inválida"
+                };
+            }
         }
     }
 }

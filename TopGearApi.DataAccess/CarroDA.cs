@@ -22,7 +22,7 @@ namespace TopGearApi.DataAccess
             }
         }
 
-        public static IEnumerable<Carro> GetDisponiveis()
+        public static IEnumerable<Carro> GetDisponiveis(DateTime inicial, DateTime final, int? agenciaId)
         {
             using (var context = GetContext())
             {
@@ -30,22 +30,13 @@ namespace TopGearApi.DataAccess
                         from c in context.Set<Carro>()
                         join l in context.Set<Locacao>() on c equals l.Carro into cl
                         from x in cl.DefaultIfEmpty()
-                        where x == null || x.Finalizada == false 
-                        select c
-                        )
-                        .ToList();
-            }
-        }
-
-        public static IEnumerable<Carro> GetDisponiveisByAgencia(int AgenciaId)
-        {
-            using (var context = GetContext())
-            {
-                return (
-                        from c in context.Set<Carro>()
-                        join l in context.Set<Locacao>() on c equals l.Carro into cl
-                        from x in cl.DefaultIfEmpty()
-                        where (x == null || x.Finalizada == false) && c.AgenciaId == AgenciaId
+                        where (
+                                    x == null || x.Finalizada == false || (x.Entrega < inicial && x.Retirada > final)
+                              )
+                              && 
+                              (
+                                  agenciaId == null || c.AgenciaId == agenciaId
+                              )
                         select c
                         )
                         .ToList();
