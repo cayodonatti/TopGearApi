@@ -65,7 +65,7 @@ namespace TopGearApi.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return new Response<T> { Sucesso = false, Mensagem = "Erro no processamento: Id = " + value.Dados };
+                    return new Response<T> { Sucesso = false, Mensagem = ex.Message };
                 }
                 return new Response<T> { Sucesso = true };
             } else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
