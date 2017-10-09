@@ -6,7 +6,7 @@ before_build:
 build_script:
   - choco install "msbuild-sonarqube-runner" -y
   - MSBuild.SonarQube.Runner.exe begin /k:"topgearapi" /o:"cayodonatti-github" /d:"sonar.host.url=https://sonarqube.com" /d:"sonar.login=3b7e611dca77dcb4dbeeecfbd2eaa9564b13c3f8"
-  - msbuild "TopGearApi.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:DeployOnBuild=True
+  - msbuild "TopGearApi.sln"
   - MSBuild.SonarQube.Runner.exe end /d:"sonar.login=3b7e611dca77dcb4dbeeecfbd2eaa9564b13c3f8"
 build:
   publish_wap: true
@@ -14,6 +14,9 @@ build:
   publish_nuget_symbols: true
   include_nuget_references: true
   verbosity: minimal
+artifacts:
+  - path: TopGearApi
+    name: TopGearApi
 deploy:
 - provider: Environment
   name: TopGearApi
