@@ -20,7 +20,7 @@ namespace TopGearApi.Test
         //[TestMethod]
         //public void Post_Locacao()
         //{
-        //    List<Carro> carros = TopGearApi<List<Carro>>.Get("carro/obterdisponiveis").Dados;
+        //    List<Carro> carros = TopGearApi<List<Carro>>.Get("carro").Dados;
         //    Locacao l = new Locacao
         //    {
         //        CarroId = carros.First().Id,
@@ -35,9 +35,9 @@ namespace TopGearApi.Test
 
         //    Assert.IsFalse(l.CarroId == carros.Last().Id);
         //    l.CarroId = carros.Last().Id;
-        //    this.Update(Id, l, path);
+        //    this.Update(Id, l);
 
-        //    this.Delete(Id, path);
+        //    this.Delete(Id);
         //}
     }
 }

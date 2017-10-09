@@ -27,24 +27,24 @@ namespace TopGearApi.Test
 
         protected int Post(T obj)
         {
-            var response = TopGearApi<T>.Post(obj, "locacao");
+            var response = TopGearApi<T>.Post(obj, path + "/post");
             Assert.IsTrue(response.Sucesso);
 
             return response.Dados;
         }
 
-        protected void Update(int Id, T obj, string Path)
+        protected void Update(int Id, T obj)
         {
-            var response = TopGearApi<T>.Put(obj, Id, Path);
+            var response = TopGearApi<T>.Put(obj, Id, path);
             Assert.IsTrue(response.Sucesso);
         }
 
-        protected void Delete(int Id, string Path)
+        protected void Delete(int Id)
         {
-            var response = TopGearApi<T>.Delete(Id, Path);
+            var response = TopGearApi<T>.Delete(Id, path);
             Assert.IsTrue(response.Sucesso);
             
-            var response2 = TopGearApi<T>.Get(Id, Path);
+            var response2 = TopGearApi<T>.Get(Id, path);
             Assert.IsTrue(response2.Sucesso);
             Assert.IsNull(response2.Dados);
         }
