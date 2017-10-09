@@ -20,7 +20,7 @@ namespace TopGearApi.Test
 
             var objeto = response.Dados[0];
 
-            var response2 = TopGearApi<T>.Get($"{path}/PorId/{objeto.Id}");
+            var response2 = TopGearApi<T>.Get(objeto.Id, path);
             Assert.IsTrue(response2.Sucesso);
             Assert.IsTrue(response2.Dados.Id == objeto.Id);
         }
