@@ -14,7 +14,7 @@ namespace TopGearApi.Controllers
     {
         [HttpPost]
         // POST: api/Locacao
-        public override Response<Locacao> Post([FromBody]Request<Locacao> value)
+        public override Response<int> Post([FromBody]Request<Locacao> value)
         {
             if (value != null && IsValid(value.Token))
             {
@@ -22,23 +22,24 @@ namespace TopGearApi.Controllers
 
                 if (l == null)
                 {
-                    LocacaoDA.Insert(value.Dados);
+                    var Id = LocacaoDA.Insert(value.Dados);
 
-                    return new Response<Locacao>
+                    return new Response<int>
                     {
-                        Sucesso = true
+                        Sucesso = true,
+                        Dados = Id
                     };
                 }
                 else
                 {
-                    return new Response<Locacao>
+                    return new Response<int>
                     {
                         Sucesso = false,
                         Mensagem = "Já existe uma locação ativa para este veículo!"
                     };
                 }
             }
-            else return new Response<Locacao> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
+            else return new Response<int> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }
     }
 }

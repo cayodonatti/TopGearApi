@@ -46,7 +46,7 @@ namespace TopGearApi.Test.Utils
             else return new Response<T> { Sucesso = false };
         }
 
-        public static Response<T> Post(T objeto, string relativePath)
+        public static Response<int> Post(T objeto, string relativePath)
         {
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -54,9 +54,9 @@ namespace TopGearApi.Test.Utils
             HttpResponseMessage response = client.PostAsJsonAsync(JsonConvert.SerializeObject(MakeRequest(objeto)), relativePath).Result;
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsAsync<Response<T>>().Result;
+                return response.Content.ReadAsAsync<Response<int>>().Result;
             }
-            else return new Response<T> { Sucesso = false };
+            else return new Response<int> { Sucesso = false };
         }
 
         public static Response<T> Put(T objeto, int id, string relativePath)
