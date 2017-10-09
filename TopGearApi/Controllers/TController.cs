@@ -34,13 +34,14 @@ namespace TopGearApi.Controllers
         }
 
         // POST: api/T
-        public Response<T> Post([FromBody]Request<T> value)
+        public virtual Response<int> Post([FromBody]Request<T> value)
         {
             if (value != null && IsValid(value.Token))
             {
-                TopGearDA<T>.Insert(value.Dados);
-                return new Response<T> { Sucesso = true };
-            } else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
+                var Id = TopGearDA<T>.Insert(value.Dados);
+                return new Response<int> { Sucesso = true, Dados = Id };
+            }
+            else return new Response<int> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }
 
         // PUT: api/T/5

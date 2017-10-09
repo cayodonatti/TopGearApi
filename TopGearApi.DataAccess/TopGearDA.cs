@@ -32,11 +32,14 @@ namespace TopGearApi.DataAccess
             }
         }
 
-        public static void Insert(T entity)
+        public static int Insert(T entity)
         {
             using (var context = GetContext())
             {
                 context.Set<T>().Add(entity);
+                context.SaveChanges();
+
+                return entity.Id;
             }
         }
 
