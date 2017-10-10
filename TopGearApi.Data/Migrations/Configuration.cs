@@ -94,6 +94,7 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Corsa",
                     Placa = "MST1231",
                     Ano = 2017,
+                    UrlImagem = "http://img2.icarros.com/dbimg/imgmodelo/2/134_4",
                     AgenciaId = context.Agencia.Where(a => a.Nome == "São Paulo Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
                 },
@@ -103,6 +104,7 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Camaro",
                     Placa = "ASD1262",
                     Ano = 2015,
+                    UrlImagem = "http://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2018/performance/camaro/mov/01-images/2018-camaro-2lt-gd1.jpeg?imwidth=600",
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Copacabana Palace Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
                 },
@@ -112,6 +114,7 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Gol",
                     Placa = "KHJ5I53",
                     Ano = 1998,
+                    UrlImagem = "http://s2.glbimg.com/AZvvHdRFa0N8GdkR-5C0B25678M=/e.glbimg.com/og/ed/f/original/2016/02/22/goldianteira.jpg",
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Copacabana Palace Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
                 },
@@ -120,6 +123,7 @@ namespace TopGearApi.Data.Migrations
                     Marca = "Fiat",
                     Modelo = "Palio",
                     Placa = "IEJ9303",
+                    UrlImagem = "http://s2.glbimg.com/AGay4FueHIo419fVatvFfYsr6VY=/620x380/e.glbimg.com/og/ed/f/original/2015/12/01/fiat-palio-fire.jpg",
                     Ano = 2010,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Copacabana Palace Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
@@ -130,6 +134,7 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Uno",
                     Placa = "ENH3123",
                     Ano = 1998,
+                    UrlImagem = "http://motordream.uol.com.br/upload/4(375).jpg",
                     AgenciaId = context.Agencia.Where(a => a.Nome == "São Paulo Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
                 },
@@ -139,6 +144,7 @@ namespace TopGearApi.Data.Migrations
                     Modelo = "Mercedes AMG",
                     Placa = "IJN3421",
                     Ano = 2016,
+                    UrlImagem = "https://cnet4.cbsistatic.com/img/6Vw_-GI36f5rqtpQYTytNxmuWgQ=/770x433/2017/01/08/59ae5b63-3a2f-42f4-a3a2-123a7241567a/2018-mercedes-amg-gt-c-edition-50-6.jpg",
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Copacabana Palace Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
                 },
@@ -147,6 +153,7 @@ namespace TopGearApi.Data.Migrations
                     Marca = "Porsche",
                     Modelo = "Limousine",
                     Placa = "KSJ9123",
+                    UrlImagem = "http://www.exoticarhire.com.au/wp-content/uploads/2014/05/0.jpg",
                     Ano = 2014,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
@@ -156,6 +163,7 @@ namespace TopGearApi.Data.Migrations
                     Marca = "Volkswagen",
                     Modelo = "Fusca",
                     Placa = "ASD1231",
+                    UrlImagem = "https://www.flatout.com.br/wp-content/uploads/2016/04/herbie-fusca-turbinado-1.jpg",
                     Ano = 1990,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
@@ -165,6 +173,7 @@ namespace TopGearApi.Data.Migrations
                     Marca = "Jeep",
                     Modelo = "Jeep",
                     Placa = "AED0434",
+                    UrlImagem = "http://s3-ap-southeast-2.amazonaws.com/assets-public/jeep-com-au/vehicles/wrangler/colorizer/sport.jpg",
                     Ano = 2017,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "São Paulo Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id
@@ -174,6 +183,7 @@ namespace TopGearApi.Data.Migrations
                     Marca = "Chevrolet",
                     Modelo = "Corolla",
                     Placa = "IKE0123",
+                    UrlImagem = "http://triautoautopecas.com.br/media/catalog/category/Corolla.jpg",
                     Ano = 2014,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
@@ -183,6 +193,7 @@ namespace TopGearApi.Data.Migrations
                     Marca = "SpaceX",
                     Modelo = "Falcon II",
                     Placa = "IEJ3940",
+                    UrlImagem = "https://cdni.rt.com/files/2015.12/original/5678606ac46188977d8b4580.jpg",
                     Ano = 2017,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id
@@ -190,8 +201,9 @@ namespace TopGearApi.Data.Migrations
                 new Carro
                 {
                     Marca = "Ferrari",
-                    Modelo = "Baccardi",
+                    Modelo = "F360",
                     Placa = "MSI2342",
+                    UrlImagem = "http://www.lisboa.ferraridealers.com/siteasset/ferraridealer/54f07ac8c35b6/961/420/selected/0/0/0/54f07ac8c35b6.jpg",
                     Ano = 2017,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
@@ -201,6 +213,7 @@ namespace TopGearApi.Data.Migrations
                     Marca = "Troller",
                     Modelo = "Troller",
                     Placa = "JSJ1231",
+                    UrlImagem = "http://www.poweroffroad.com.br/site/wp-content/uploads/TROLLER_LOJA_1024_149.jpg",
                     Ano = 2014,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
                     CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id

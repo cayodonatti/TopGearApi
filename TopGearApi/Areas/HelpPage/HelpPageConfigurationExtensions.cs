@@ -269,26 +269,6 @@ namespace TopGearApi.Areas.HelpPage
                         complexTypeDescription = typeDescription as ComplexTypeModelDescription;
                     }
 
-                    // Example:
-                    // [TypeConverter(typeof(PointConverter))]
-                    // public class Point
-                    // {
-                    //     public Point(int x, int y)
-                    //     {
-                    //         X = x;
-                    //         Y = y;
-                    //     }
-                    //     public int X { get; set; }
-                    //     public int Y { get; set; }
-                    // }
-                    // Class Point is bindable with a TypeConverter, so Point will be added to UriParameters collection.
-                    // 
-                    // public class Point
-                    // {
-                    //     public int X { get; set; }
-                    //     public int Y { get; set; }
-                    // }
-                    // Regular complex class Point will have properties X and Y added to UriParameters collection.
                     if (complexTypeDescription != null
                         && !IsBindableWithTypeConverter(parameterType))
                     {
