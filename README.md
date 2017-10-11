@@ -9,7 +9,7 @@ http://topgearapi.azurewebsites.net/help
 
 ## Integrantes  
 Cayo Donatti  
-Ricardo Sabaini
+Ricardo Sabaini  
 
 ## Minimundo  
 TopGear é uma empresa de aluguel de veículos. Para alugar um veículo, o cliente precisa selecionar uma entre as categorias, um modelo específico ou uma faixa de preços, e à partir desse filtro são apresentados os veículos disponíveis, bem como os dados e preços do serviço, que variam de acordo com o preço, luxo e período de aluguel dos modelos de carro. O cliente seleciona um dos veículos disponíveis e determina então o período de aluguel, os serviços extras que deseja (seguro, combustível) e local de retirada/entrega do veículo.  
