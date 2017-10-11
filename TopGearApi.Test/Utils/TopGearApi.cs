@@ -52,7 +52,7 @@ namespace TopGearApi.Test.Utils
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.PostAsJsonAsync(relativePath, MakeRequest(objeto)).Result;
+            HttpResponseMessage response = client.PostAsJsonAsync(relativePath + "/post", MakeRequest(objeto)).Result;
             if (response.IsSuccessStatusCode)
             {
                 var result = response.Content.ReadAsAsync<Response<int>>().Result;

@@ -21,12 +21,6 @@ namespace TopGearApi
                 defaults: new { action = "Get", id = RouteParameter.Optional }
             );
 
-            //config.Routes.MapHttpRoute(
-            //    name: "DefaultApi",
-            //    routeTemplate: "api/{controller}/{id}",
-            //    defaults: new { action = "Get", id = RouteParameter.Optional }
-            //);
-
             config.Formatters.Clear();
             config.Formatters.Add(new JsonMediaTypeFormatter());
             config.Formatters.Add(new XmlMediaTypeFormatter());

@@ -27,7 +27,7 @@ namespace TopGearApi.Test
 
         protected int Post(T obj)
         {
-            var response = TopGearApi<T>.Post(obj, path + "/post");
+            var response = TopGearApi<T>.Post(obj, path);
             Assert.IsTrue(response.Sucesso);
 
             return response.Dados;
