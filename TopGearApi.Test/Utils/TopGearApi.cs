@@ -15,7 +15,7 @@ namespace TopGearApi.Test.Utils
     {
         protected static HttpClient client = new HttpClient
         {
-            BaseAddress = new Uri(ConfigurationManager.AppSettings["baseUrl"])
+            BaseAddress = new Uri(ConfigurationManager.AppSettings["baseUrlTeste"])
         };
 
         private static string Token = ConfigurationManager.AppSettings["Token"];
