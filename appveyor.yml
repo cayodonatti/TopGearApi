@@ -22,7 +22,6 @@ deploy:
   name: TopGearApi
   on:
       branch: master
-deploy:
 - provider: Environment
   name: TopGearApiTest
   on:
