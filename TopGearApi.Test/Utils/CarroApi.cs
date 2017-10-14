@@ -18,14 +18,7 @@ namespace TopGearApi.Test.Utils
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpRequestMessage request = new HttpRequestMessage
-            {
-                Content = new StringContent(JsonConvert.SerializeObject(TopGearApi<RequestCarrosDisponiveis>.MakeRequest(req), Formatting.Indented), Encoding.UTF8, "application/json"),
-                Method = HttpMethod.Post,
-                RequestUri = new Uri(client.BaseAddress + "carro/obterdisponiveis")
-            };
-
-            HttpResponseMessage response = client.SendAsync(request).Result;
+            HttpResponseMessage response = client.PostAsJsonAsync("carro/obterdisponiveis", req).Result;
             if (response.IsSuccessStatusCode)
             {
                 var result = response.Content.ReadAsAsync<Response<List<Carro>>>().Result;
