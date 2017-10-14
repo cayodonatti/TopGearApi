@@ -24,7 +24,7 @@ namespace TopGearApi.Controllers
             };
         }
 
-        [HttpGet]
+        [HttpPost]
         [ActionName("ObterDisponiveis")]
         public Response<IEnumerable<Carro>> GetDisponiveis([FromBody] RequestCarrosDisponiveis req)
         {
