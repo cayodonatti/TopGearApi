@@ -102,7 +102,7 @@ namespace TopGearApi.Test.Utils
             return new Request<T> { Dados = dados, Token = Token };
         }
 
-        public string GetToken()
+        public static string GetToken()
         {
             return Token;
         }
