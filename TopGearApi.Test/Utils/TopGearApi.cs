@@ -11,9 +11,9 @@ using TopGearApi.Models;
 
 namespace TopGearApi.Test.Utils
 {
-    public static class TopGearApi<T>
+    public class TopGearApi<T>
     {
-        private static HttpClient client = new HttpClient
+        protected static HttpClient client = new HttpClient
         {
             BaseAddress = new Uri(ConfigurationManager.AppSettings["baseUrl"])
         };
@@ -97,9 +97,14 @@ namespace TopGearApi.Test.Utils
             else return new Response<T> { Sucesso = false };
         }
 
-        private static Request<T> MakeRequest(T dados)
+        protected static Request<T> MakeRequest(T dados)
         {
             return new Request<T> { Dados = dados, Token = Token };
+        }
+
+        public static string GetToken()
+        {
+            return Token;
         }
     }
 }

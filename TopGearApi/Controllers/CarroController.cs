@@ -24,11 +24,11 @@ namespace TopGearApi.Controllers
             };
         }
 
-        [HttpGet]
+        [HttpPost]
         [ActionName("ObterDisponiveis")]
         public Response<IEnumerable<Carro>> GetDisponiveis([FromBody] RequestCarrosDisponiveis req)
         {
-            if (ModelState.IsValid)
+            if (req.Inicial != DateTime.MinValue && req.Final != DateTime.MinValue && IsValid(req.Token))
             {
                 return new Response<IEnumerable<Carro>>
                 {
