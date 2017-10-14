@@ -20,7 +20,7 @@ namespace TopGearApi.Test.Utils
 
             HttpRequestMessage request = new HttpRequestMessage
             {
-                Content = new StringContent(JsonConvert.SerializeObject(TopGearApi<RequestCarrosDisponiveis>.MakeRequest(req)), Encoding.UTF8, "application/json"),
+                Content = new StringContent(JsonConvert.SerializeObject(TopGearApi<RequestCarrosDisponiveis>.MakeRequest(req), Formatting.Indented), Encoding.UTF8, "application/json"),
                 Method = HttpMethod.Post,
                 RequestUri = new Uri(client.BaseAddress + "carro/obterdisponiveis")
             };
