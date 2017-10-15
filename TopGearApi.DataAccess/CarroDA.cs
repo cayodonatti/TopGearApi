@@ -31,7 +31,7 @@ namespace TopGearApi.DataAccess
                         join l in context.Set<Locacao>() on c equals l.Carro into cl
                         from x in cl.DefaultIfEmpty()
                         where (
-                                    x == null || x.Finalizada == false || (x.Entrega < inicial && x.Retirada > final)
+                                    x == null || x.Finalizada || (x.Entrega < inicial && x.Retirada > final)
                               )
                               && 
                               (
