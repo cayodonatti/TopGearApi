@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TopGearApi.Domain.Models;
+using TopGearApi.Models;
 using TopGearApi.Test.Utils;
 
 namespace TopGearApi.Test
@@ -18,9 +19,16 @@ namespace TopGearApi.Test
         }
 
         [TestMethod]
-        public void Post_Locacao()
+        public void Fluxo_Locacao()
         {
-            List<Carro> carros = TopGearApi<List<Carro>>.Get("carro").Dados;
+            var req = new RequestCarrosDisponiveis
+            {
+                Inicial = new DateTime(2017, 10, 01),
+                Final = new DateTime(2017, 10, 15),
+                Token = TopGearApi<Carro>.GetToken()
+            };
+
+            List<Carro> carros = CarroApi.ObterDisponiveis(req).Dados;
             Locacao l = new Locacao
             {
                 CarroId = carros.First().Id,

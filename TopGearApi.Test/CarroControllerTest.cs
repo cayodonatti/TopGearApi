@@ -11,8 +11,36 @@ using TopGearApi.Test.Utils;
 namespace TopGearApi.Test
 {
     [TestClass]
-    public class CarroControllerTest
+    public class CarroControllerTest : BaseControllerTest<Carro>
     {
+        public CarroControllerTest()
+        {
+            this.path = "carro";
+        }
+
+        [TestMethod]
+        public void Fluxo_Carro()
+        {
+            Carro c = new Carro
+            {
+                AgenciaId = TopGearApi<List<Agencia>>.Get("agencia").Dados.First().Id,
+                Marca = "Teste",
+                Ano = 2017,
+                Modelo = "Teste",
+                Placa = "TST1234",
+                CategoriaId = TopGearApi<List<Categoria>>.Get("categoria").Dados.First().Id,
+                UrlImagem = "fake12312"
+            };
+
+            var Id = this.Post(c);
+
+            c.Marca = "Teste 2";
+
+            this.Update(Id, c);
+
+            this.Delete(Id);
+        }
+
         [TestMethod]
         public void ObterDisponiveis()
         {

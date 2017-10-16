@@ -33,7 +33,7 @@ namespace TopGearApi.Controllers
                 return new Response<IEnumerable<Carro>>
                 {
                     Sucesso = true,
-                    Dados = CarroDA.GetDisponiveis(req.Inicial, req.Final, req.AgenciaId)
+                    Dados = CarroDA.GetDisponiveis(req.Inicial, req.Final, req.AgenciaId, req.ItemId)
                 };
             }
             else

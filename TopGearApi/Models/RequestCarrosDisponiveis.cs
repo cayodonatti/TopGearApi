@@ -14,5 +14,6 @@ namespace TopGearApi.Models
         [Required]
         public DateTime Final { get; set; }
         public int? AgenciaId { get; set; }
+        public int? ItemId { get; set; }
     }
 }
