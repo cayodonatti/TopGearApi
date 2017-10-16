@@ -19,7 +19,7 @@ namespace TopGearApi.Test
         }
 
         [TestMethod]
-        public void Post_Locacao()
+        public void Fluxo_Locacao()
         {
             var req = new RequestCarrosDisponiveis
             {

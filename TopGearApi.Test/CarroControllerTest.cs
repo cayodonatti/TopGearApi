@@ -19,7 +19,7 @@ namespace TopGearApi.Test
         }
 
         [TestMethod]
-        public void Post_Carro()
+        public void Fluxo_Carro()
         {
             Carro c = new Carro
             {
