@@ -9,20 +9,33 @@ namespace TopGearApi.DataAccess
 {
     public class CarroDA : TopGearDA<Carro>
     {
-        public static IEnumerable<Carro> GetByItem(int ItemId)
+        public static IEnumerable<Carro> GetByItem(int itemId)
         {
             using (var context = GetContext())
             {
                 return (
                         from c in context.Set<Carro>()
-                        where c.Itens.Where(i => i.Id == ItemId).FirstOrDefault() != null
+                        where c.Itens.FirstOrDefault(i => i.Id == itemId) != null
                         select c
                     )
                     .ToList(); 
             }
         }
 
-        public static IEnumerable<Carro> GetDisponiveis(DateTime inicial, DateTime final, int? agenciaId)
+        public static IEnumerable<Carro> GetByCategoria(int categoriaId)
+        {
+            using (var context = GetContext())
+            {
+                return (
+                        from c in context.Set<Carro>()
+                        where c.CategoriaId == categoriaId
+                        select c
+                    )
+                    .ToList();
+            }
+        }
+
+        public static IEnumerable<Carro> GetDisponiveis(DateTime inicial, DateTime final, int? agenciaId, int? itemId)
         {
             using (var context = GetContext())
             {
@@ -36,6 +49,10 @@ namespace TopGearApi.DataAccess
                               && 
                               (
                                   agenciaId == null || c.AgenciaId == agenciaId
+                              )
+                              &&
+                              (
+                                  itemId == null || c.Itens.FirstOrDefault(i => i.Id == itemId) != null
                               )
                         select c
                         )
