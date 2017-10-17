@@ -8,6 +8,7 @@ using TopGearApi.Domain.Models;
 
 namespace TopGearApi.Controllers
 {
+    [AllowAnonymous]
     public class ItemController : TController<Item>
     {
         

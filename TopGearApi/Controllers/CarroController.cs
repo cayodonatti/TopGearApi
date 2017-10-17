@@ -10,6 +10,7 @@ using TopGearApi.Models;
 
 namespace TopGearApi.Controllers
 {
+    [AllowAnonymous]
     public class CarroController : TController<Carro>
     {
         
