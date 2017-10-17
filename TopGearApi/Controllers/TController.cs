@@ -10,6 +10,7 @@ using TopGearApi.Models;
 
 namespace TopGearApi.Controllers
 {
+    [AllowAnonymous]
     public abstract class TController<T> : ApiController where T : class, IEntity
     {
         // GET: api/T

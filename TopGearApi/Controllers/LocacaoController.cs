@@ -10,6 +10,7 @@ using TopGearApi.Models;
 
 namespace TopGearApi.Controllers
 {
+    [AllowAnonymous]
     public class LocacaoController : TController<Locacao>
     {
         [HttpPost]
