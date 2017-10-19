@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TopGearApi.Test.Utils;
 using TopGearApi.Domain.Models;
 using System.Collections.Generic;
 using TopGearApi.Models;
+using TopGearApi.Access;
 
 namespace TopGearApi.Test
 {

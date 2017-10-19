@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using TopGearApi.Domain.Models;
 using TopGearApi.Models;
 
-namespace TopGearApi.Test.Utils
+namespace TopGearApi.Access
 {
     public class CarroApi : TopGearApi<Carro>
     {

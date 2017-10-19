@@ -76,14 +76,16 @@
     <Compile Include="CarroControllerTest.cs" />
     <Compile Include="LocacaoControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\CarroApi.cs" />
-    <Compile Include="Utils\TopGearApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TopGearApi.Access\TopGearApi.Access.csproj">
+      <Project>{9879D9CE-951F-47DF-BC5E-A89D9B7FD69E}</Project>
+      <Name>TopGearApi.Access</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TopGearApi.Domain\TopGearApi.Domain.csproj">
       <Project>{B3445722-CB9F-4C96-A399-E1AC7EF03524}</Project>
       <Name>TopGearApi.Domain</Name>

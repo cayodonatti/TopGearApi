@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TopGearApi.Access;
 using TopGearApi.Domain.Models;
 using TopGearApi.Models;
-using TopGearApi.Test.Utils;
 
 namespace TopGearApi.Test
 {

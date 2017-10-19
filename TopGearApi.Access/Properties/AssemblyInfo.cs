@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TopGearApi.Console")]
+[assembly: AssemblyTitle("TopGearApi.Access")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TopGearApi.Console")]
+[assembly: AssemblyProduct("TopGearApi.Access")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("71c9c056-b299-4028-9e07-dad1eec6d9a5")]
+[assembly: Guid("9879d9ce-951f-47df-bc5e-a89d9b7fd69e")]
 
 // Version information for an assembly consists of the following four values:
 //
