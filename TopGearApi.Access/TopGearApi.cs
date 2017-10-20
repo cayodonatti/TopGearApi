@@ -11,14 +11,9 @@ using TopGearApi.Models;
 
 namespace TopGearApi.Access
 {
-    public class TopGearApi<T>
+    public class TopGearApi<T> : GenericApi
     {
-        protected static HttpClient client = new HttpClient
-        {
-            BaseAddress = new Uri(ConfigurationManager.AppSettings["baseUrlTeste"])
-        };
-
-        private static string Token = ConfigurationManager.AppSettings["Token"];
+        protected TopGearApi() { }
 
         public static Response<T> Get(string relativePath)
         {
