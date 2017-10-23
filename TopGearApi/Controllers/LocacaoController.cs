@@ -42,5 +42,17 @@ namespace TopGearApi.Controllers
             }
             else return new Response<int> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }
+
+        [HttpPost]
+        [ActionName("ObterLocacoes")]
+        public Response<List<Locacao>> ObterLocacoes([FromBody] Request<int> req)
+        {
+            var locacoes = LocacaoDA.GetByCliente(req.Dados);
+            return new Response<List<Locacao>>
+            {
+                Sucesso = true,
+                Dados = locacoes
+            };
+        }
     }
 }

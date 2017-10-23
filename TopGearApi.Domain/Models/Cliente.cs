@@ -20,6 +20,7 @@ namespace TopGearApi.Domain.Models
         [StringLength(11)]
         public string CPF { get; set; }
         public string Cartao { get; set; }
+        [Required]
         public string Senha { get; set; }
 
         [IgnoreDataMember]

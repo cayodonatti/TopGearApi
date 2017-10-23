@@ -228,7 +228,8 @@ namespace TopGearApi.Data.Migrations
                     CPF = "00000000272",
                     Endereco = "Rua X",
                     Telefone = "2733263638",
-                    Cartao = "8888777766665555"
+                    Cartao = "8888777766665555",
+                    Senha = "1234"
                 },
                 new Cliente
                 {
@@ -236,7 +237,8 @@ namespace TopGearApi.Data.Migrations
                     CPF = "00000000191",
                     Endereco = "Rua Y",
                     Telefone = "2764654852",
-                    Cartao = "1111222233334444"
+                    Cartao = "1111222233334444",
+                    Senha = "5678"
                 }
                 );
 

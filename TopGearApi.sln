@@ -24,6 +24,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopGearApi.Access", "TopGea
 		{B04EFCC6-CA07-47BF-BCE5-47C07198EFC8} = {B04EFCC6-CA07-47BF-BCE5-47C07198EFC8}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopGearApi.Promotions", "TopGearApi.Promotions\TopGearApi.Promotions.csproj", "{404236C1-33C7-48F8-ADF6-1153384268DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopGearApi.Console", "TopGearApi.Console\TopGearApi.Console.csproj", "{4F55A7B7-DBA9-462F-B14B-B20D20821A09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +58,14 @@ Global
 		{9879D9CE-951F-47DF-BC5E-A89D9B7FD69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9879D9CE-951F-47DF-BC5E-A89D9B7FD69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9879D9CE-951F-47DF-BC5E-A89D9B7FD69E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{404236C1-33C7-48F8-ADF6-1153384268DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404236C1-33C7-48F8-ADF6-1153384268DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404236C1-33C7-48F8-ADF6-1153384268DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404236C1-33C7-48F8-ADF6-1153384268DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F55A7B7-DBA9-462F-B14B-B20D20821A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F55A7B7-DBA9-462F-B14B-B20D20821A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F55A7B7-DBA9-462F-B14B-B20D20821A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F55A7B7-DBA9-462F-B14B-B20D20821A09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
