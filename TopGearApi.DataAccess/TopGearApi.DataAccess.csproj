@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarroDA.cs" />
+    <Compile Include="ClienteDA.cs" />
     <Compile Include="LocacaoDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TopGearDA.cs" />

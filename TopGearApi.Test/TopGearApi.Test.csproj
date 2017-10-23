@@ -74,6 +74,9 @@
     <Compile Include="AgenciaControllerTest.cs" />
     <Compile Include="BaseControllerTest.cs" />
     <Compile Include="CarroControllerTest.cs" />
+    <Compile Include="CategoriaControllerTest.cs" />
+    <Compile Include="ClienteControllerTest.cs" />
+    <Compile Include="ItemControllerTest.cs" />
     <Compile Include="LocacaoControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
