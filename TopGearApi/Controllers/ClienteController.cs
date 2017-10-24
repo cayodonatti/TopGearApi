@@ -17,7 +17,7 @@ namespace TopGearApi.Controllers
         [ActionName("Login")]
         public Response<Cliente> Login([FromBody] LoginRequest req)
         {
-            if (req.CPF != null && req.CPF != null && IsValid(req.Token))
+            if (req.CPF != null && req.Senha != null && IsValid(req.Token))
             {
                 var cli = ClienteDA.Login(req.CPF, req.Senha);
 
