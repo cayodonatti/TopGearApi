@@ -79,9 +79,9 @@
     <Compile Include="Migrations\201710101134038_AdicionarSenhaUrlImagem.Designer.cs">
       <DependentUpon>201710101134038_AdicionarSenhaUrlImagem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710231129511_SenhaObrigatoria.cs" />
-    <Compile Include="Migrations\201710231129511_SenhaObrigatoria.Designer.cs">
-      <DependentUpon>201710231129511_SenhaObrigatoria.cs</DependentUpon>
+    <Compile Include="Migrations\201710291042327_MensagemENovoCliente.cs" />
+    <Compile Include="Migrations\201710291042327_MensagemENovoCliente.Designer.cs">
+      <DependentUpon>201710291042327_MensagemENovoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="Migrations\201710101134038_AdicionarSenhaUrlImagem.resx">
       <DependentUpon>201710101134038_AdicionarSenhaUrlImagem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710231129511_SenhaObrigatoria.resx">
-      <DependentUpon>201710231129511_SenhaObrigatoria.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710291042327_MensagemENovoCliente.resx">
+      <DependentUpon>201710291042327_MensagemENovoCliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

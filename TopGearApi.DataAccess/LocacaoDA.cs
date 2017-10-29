@@ -24,6 +24,7 @@ namespace TopGearApi.DataAccess
                 return (
                         from loc in context.Set<Locacao>()
                         join cli in context.Set<Cliente>() on loc.ClienteId equals cli.Id
+                        where cli.Id == ClienteId
                         select loc
                     )
                     .ToList();

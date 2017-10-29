@@ -16,7 +16,7 @@ namespace TopGearApi.Data.Migrations
 
         protected override void Seed(TopGearApi.Data.TopGearContext context)
         {
-            context.Itens.AddOrUpdate(
+            context.Item.AddOrUpdate(
                 x => x.Descricao,
                 new Item
                 {
@@ -226,18 +226,16 @@ namespace TopGearApi.Data.Migrations
                 {
                     Nome = "Cayo Donatti",
                     CPF = "00000000272",
-                    Endereco = "Rua X",
-                    Telefone = "2733263638",
                     Cartao = "8888777766665555",
+                    Nascimento = new DateTime(1994, 01, 24),
                     Senha = "1234"
                 },
                 new Cliente
                 {
                     Nome = "Ricardo Sabaini",
                     CPF = "00000000191",
-                    Endereco = "Rua Y",
-                    Telefone = "2764654852",
                     Cartao = "1111222233334444",
+                    Nascimento = new DateTime(1992, 03, 15),
                     Senha = "5678"
                 }
                 );
