@@ -13,15 +13,13 @@ namespace TopGearApi.Domain.Models
         public int Id { get; set; }
 
         public string Nome { get; set; }
-        public string Telefone { get; set; }
-        public string Endereco { get; set; }
         [Required]
         [Index(IsUnique = true)]
         [StringLength(11)]
         public string CPF { get; set; }
-        public string Cartao { get; set; }
-        [Required]
+        public DateTime Nascimento { get; set; }
         public string Senha { get; set; }
+        public string Cartao { get; set; }
 
         [IgnoreDataMember]
         public virtual ICollection<Locacao> Locacoes { get; set; }

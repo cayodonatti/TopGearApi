@@ -152,6 +152,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LocacaoController.cs" />
+    <Compile Include="Controllers\MensagemController.cs" />
     <Compile Include="Controllers\TController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

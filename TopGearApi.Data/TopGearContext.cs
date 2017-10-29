@@ -23,6 +23,7 @@ namespace TopGearApi.Data
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Locacao> Locacao { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Item> Itens { get; set; }
+        public DbSet<Item> Item { get; set; }
+        public DbSet<Mensagem> Mensagem { get; set; }
     }
 }
