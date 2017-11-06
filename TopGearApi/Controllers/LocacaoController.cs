@@ -47,11 +47,50 @@ namespace TopGearApi.Controllers
         [ActionName("ObterLocacoes")]
         public Response<List<Locacao>> ObterLocacoes([FromBody] Request<int> req)
         {
-            var locacoes = LocacaoDA.GetByCliente(req.Dados);
-            return new Response<List<Locacao>>
+            if (req != null && IsValid(req.Token))
             {
-                Sucesso = true,
-                Dados = locacoes
+                var locacoes = LocacaoDA.GetByCliente(req.Dados);
+                return new Response<List<Locacao>>
+                {
+                    Sucesso = true,
+                    Dados = locacoes
+                };
+            }
+            else return new Response<List<Locacao>>
+            {
+                Sucesso = false,
+                Mensagem = "Token Inválido!"
+            };
+        }
+
+        [HttpPost]
+        [ActionName("CancelarLocacao")]
+        public Response<Locacao> CancelarLocacao([FromBody] Request<int> req)
+        {
+            if (req != null && IsValid(req.Token))
+            {
+                try
+                {
+                    var sucesso = LocacaoDA.CancelarLocacao(req.Dados);
+
+                    return new Response<Locacao>
+                    {
+                        Sucesso = sucesso
+                    };
+                }
+                catch(Exception ex)
+                {
+                    return new Response<Locacao>
+                    {
+                        Sucesso = false,
+                        Mensagem = "Erro ao cancelar a reserva: " + ex.Message
+                    };
+                }
+            }
+            else return new Response<Locacao>
+            {
+                Sucesso = false,
+                Mensagem = "Token Inválido!"
             };
         }
     }

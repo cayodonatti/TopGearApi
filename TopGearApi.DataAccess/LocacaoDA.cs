@@ -30,5 +30,18 @@ namespace TopGearApi.DataAccess
                     .ToList();
             }
         }
+
+        public static bool CancelarLocacao(int IdLocacao)
+        {
+            using (var context = GetContext())
+            {
+                var loc = context.Set<Locacao>().Where(l => l.Id == IdLocacao).FirstOrDefault();
+                loc.Cancelada = true;
+
+                context.SaveChanges();
+            }
+
+            return true;
+        }
     }
 }
