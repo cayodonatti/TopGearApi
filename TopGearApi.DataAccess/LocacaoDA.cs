@@ -13,7 +13,7 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                return context.Set<Locacao>().Where(l => l.CarroId == carroId && !l.Finalizada).FirstOrDefault();
+                return context.Set<Locacao>().Where(l => l.CarroId == carroId && !l.Finalizada && !l.Cancelada).FirstOrDefault();
             }
         }
 
