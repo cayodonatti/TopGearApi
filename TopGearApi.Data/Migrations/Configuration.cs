@@ -247,6 +247,16 @@ namespace TopGearApi.Data.Migrations
                 new Usuario
                 {
                     Nome = "Admin",
+                    Token = "PotatoSaladMaionaiseMonster"
+                },
+                new Usuario
+                {
+                    Nome = "Website",
+                    Token = "NotebookHeadphonePencilBookcase"
+                },
+                new Usuario
+                {
+                    Nome = "HotelsApi",
                     Token = "CorrectHorseBatteryStaple"
                 }
                 );
