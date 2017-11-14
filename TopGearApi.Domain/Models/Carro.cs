@@ -28,8 +28,6 @@ namespace TopGearApi.Domain.Models
         public int CategoriaId { get; set; }
 
         [IgnoreDataMember]
-        public virtual Agencia Agencia { get; set; }
-        [IgnoreDataMember]
         public virtual Categoria Categoria { get; set; }
         [IgnoreDataMember]
         public virtual ICollection<Item> Itens { get; set; }

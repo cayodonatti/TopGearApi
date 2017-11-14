@@ -1,6 +1,7 @@
 namespace TopGearApi.Data.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -20,10 +21,12 @@ namespace TopGearApi.Data.Migrations
                 x => x.Descricao,
                 new Item
                 {
+                    Id = 1,
                     Descricao = "Ar Condicionado"
                 },
                 new Item
                 {
+                    Id = 2,
                     Descricao = "Teto Solar"
                 }
                 );
@@ -96,7 +99,11 @@ namespace TopGearApi.Data.Migrations
                     Ano = 2017,
                     UrlImagem = "http://img2.icarros.com/dbimg/imgmodelo/2/134_4",
                     AgenciaId = context.Agencia.Where(a => a.Nome == "São Paulo Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id == 1)
+                    }
                 },
                 new Carro
                 {
@@ -106,7 +113,12 @@ namespace TopGearApi.Data.Migrations
                     Ano = 2015,
                     UrlImagem = "http://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2018/performance/camaro/mov/01-images/2018-camaro-2lt-gd1.jpeg?imwidth=600",
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Copacabana Palace Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id == 1), 
+                        context.Item.FirstOrDefault(i => i.Id ==2)
+                    }
                 },
                 new Carro
                 {
@@ -126,7 +138,11 @@ namespace TopGearApi.Data.Migrations
                     UrlImagem = "http://s2.glbimg.com/AGay4FueHIo419fVatvFfYsr6VY=/620x380/e.glbimg.com/og/ed/f/original/2015/12/01/fiat-palio-fire.jpg",
                     Ano = 2010,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Copacabana Palace Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id == 1)
+                    }
                 },
                 new Carro
                 {
@@ -146,7 +162,12 @@ namespace TopGearApi.Data.Migrations
                     Ano = 2016,
                     UrlImagem = "https://cnet4.cbsistatic.com/img/6Vw_-GI36f5rqtpQYTytNxmuWgQ=/770x433/2017/01/08/59ae5b63-3a2f-42f4-a3a2-123a7241567a/2018-mercedes-amg-gt-c-edition-50-6.jpg",
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Copacabana Palace Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id == 1),
+                        context.Item.FirstOrDefault(i => i.Id ==2)
+                    }
                 },
                 new Carro
                 {
@@ -156,7 +177,12 @@ namespace TopGearApi.Data.Migrations
                     UrlImagem = "http://www.exoticarhire.com.au/wp-content/uploads/2014/05/0.jpg",
                     Ano = 2014,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id == 1),
+                        context.Item.FirstOrDefault(i => i.Id ==2)
+                    }
                 },
                 new Carro
                 {
@@ -176,7 +202,11 @@ namespace TopGearApi.Data.Migrations
                     UrlImagem = "http://s3-ap-southeast-2.amazonaws.com/assets-public/jeep-com-au/vehicles/wrangler/colorizer/sport.jpg",
                     Ano = 2017,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "São Paulo Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id ==2)
+                    }
                 },
                 new Carro
                 {
@@ -186,7 +216,12 @@ namespace TopGearApi.Data.Migrations
                     UrlImagem = "http://triautoautopecas.com.br/media/catalog/category/Corolla.jpg",
                     Ano = 2014,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Popular").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id == 1),
+                        context.Item.FirstOrDefault(i => i.Id ==2)
+                    }
                 },
                 new Carro
                 {
@@ -196,7 +231,11 @@ namespace TopGearApi.Data.Migrations
                     UrlImagem = "https://cdni.rt.com/files/2015.12/original/5678606ac46188977d8b4580.jpg",
                     Ano = 2017,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id == 1)
+                    }
                 },
                 new Carro
                 {
@@ -206,7 +245,12 @@ namespace TopGearApi.Data.Migrations
                     UrlImagem = "http://www.lisboa.ferraridealers.com/siteasset/ferraridealer/54f07ac8c35b6/961/420/selected/0/0/0/54f07ac8c35b6.jpg",
                     Ano = 2017,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Luxo").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id == 1),
+                        context.Item.FirstOrDefault(i => i.Id ==2)
+                    }
                 },
                 new Carro
                 {
@@ -216,7 +260,11 @@ namespace TopGearApi.Data.Migrations
                     UrlImagem = "http://www.poweroffroad.com.br/site/wp-content/uploads/TROLLER_LOJA_1024_149.jpg",
                     Ano = 2014,
                     AgenciaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
-                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id
+                    CategoriaId = context.Categoria.Where(c => c.Descricao == "Esporte").FirstOrDefault().Id,
+                    Itens = new List<Item>
+                    {
+                        context.Item.FirstOrDefault(i => i.Id ==2)
+                    }
                 }
                 );
 
