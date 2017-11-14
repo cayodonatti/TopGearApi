@@ -352,8 +352,8 @@ namespace TopGearApi.Data.Migrations
                     Retirada = new DateTime(2017, 10, 03),
                     Entrega = new DateTime(2017, 10, 07),
                     ClienteId = context.Cliente.Where(c => c.CPF == "00000000272").FirstOrDefault().Id,
-                    Agencia_RetiradaId = context.Agencia.Where(a => a.Nome == "São Paulo Car").FirstOrDefault().Id,
-                    Agencia_EntregaId = context.Agencia.Where(a => a.Nome == "Vix Car").FirstOrDefault().Id,
+                    Agencia_RetiradaId = context.Agencia.Where(a => a.Nome == "CNF").FirstOrDefault().Id,
+                    Agencia_EntregaId = context.Agencia.Where(a => a.Nome == "CNF").FirstOrDefault().Id,
                     Finalizada = false
                 }
                 );
