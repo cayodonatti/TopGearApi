@@ -24,7 +24,6 @@ namespace TopGearApi.Domain.Models
         public int Ano { get; set; }
         public string UrlImagem { get; set; }
 
-        public int AgenciaId { get; set; }
         public int CategoriaId { get; set; }
 
         [IgnoreDataMember]

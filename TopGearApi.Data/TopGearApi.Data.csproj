@@ -91,6 +91,10 @@
     <Compile Include="Migrations\201711140003504_RemoverCarroAgencia.Designer.cs">
       <DependentUpon>201711140003504_RemoverCarroAgencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711141034419_RemoveAgenciaCarropt2.cs" />
+    <Compile Include="Migrations\201711141034419_RemoveAgenciaCarropt2.Designer.cs">
+      <DependentUpon>201711141034419_RemoveAgenciaCarropt2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711140003504_RemoverCarroAgencia.resx">
       <DependentUpon>201711140003504_RemoverCarroAgencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141034419_RemoveAgenciaCarropt2.resx">
+      <DependentUpon>201711141034419_RemoveAgenciaCarropt2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
