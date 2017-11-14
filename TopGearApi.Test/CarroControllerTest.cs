@@ -23,7 +23,6 @@ namespace TopGearApi.Test
         {
             Carro c = new Carro
             {
-                AgenciaId = TopGearApi<List<Agencia>>.Get("agencia").Dados.First().Id,
                 Marca = "Teste",
                 Ano = 2017,
                 Modelo = "Teste",
