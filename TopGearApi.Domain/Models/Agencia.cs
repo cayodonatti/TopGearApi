@@ -23,8 +23,5 @@ namespace TopGearApi.Domain.Models
         public string Cidade { get; set; }
         [Required]
         public string Estado { get; set; }
-
-        [IgnoreDataMember]
-        public virtual ICollection<Carro> Carros_Disponiveis { get; set; }
     }
 }

@@ -35,7 +35,7 @@ namespace TopGearApi.DataAccess
             }
         }
 
-        public static IEnumerable<Carro> GetDisponiveis(DateTime inicial, DateTime final, int? agenciaId, int? itemId)
+        public static IEnumerable<Carro> GetDisponiveis(DateTime inicial, DateTime final, int? itemId)
         {
             using (var context = GetContext())
             {
@@ -45,10 +45,6 @@ namespace TopGearApi.DataAccess
                         from x in cl.DefaultIfEmpty()
                         where (
                                     x == null || x.Finalizada || x.Cancelada || (x.Entrega < inicial && x.Retirada > final)
-                              )
-                              && 
-                              (
-                                  agenciaId == null || c.AgenciaId == agenciaId
                               )
                               &&
                               (
