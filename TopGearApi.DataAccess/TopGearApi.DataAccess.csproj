@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgenciaDA.cs" />
     <Compile Include="CarroDA.cs" />
     <Compile Include="ClienteDA.cs" />
     <Compile Include="LocacaoDA.cs" />
