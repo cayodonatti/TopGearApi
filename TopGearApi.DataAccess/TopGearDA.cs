@@ -11,6 +11,8 @@ namespace TopGearApi.DataAccess
 {
     public class TopGearDA<T> where T : class, IEntity
     {
+        protected TopGearDA() {}
+
         protected static DbContext GetContext()
         {
             return new TopGearContext();
