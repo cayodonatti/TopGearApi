@@ -52,7 +52,6 @@
     <Compile Include="GenericApi.cs" />
     <Compile Include="MensagemConector.cs" />
     <Compile Include="PassagemApi.cs" />
-    <Compile Include="PassagemModels\EnviarPassageiro.cs" />
     <Compile Include="PassagemModels\Voo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TopGearApi.cs" />
