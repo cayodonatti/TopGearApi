@@ -12,7 +12,7 @@ namespace TopGearApi.Access
 {
     public class PassagemApi
     {
-        public static string urlBase = "http://viniciuszorzanelli.com/Source/Slim/api.php/";
+        private static string urlBase = "http://viniciuszorzanelli.com/Source/Slim/api.php/";
 
         public static List<Voo> GetTodosVoos()
         {
