@@ -13,6 +13,15 @@ namespace TopGearApi.Controllers
     [AllowAnonymous]
     public class AgenciaController : TController<Agencia>
     {
-
+        [HttpGet]
+        [ActionName("ObterPorSigla")]
+        public Response<Agencia> GetByItem(string sigla)
+        {
+            return new Response<Agencia>
+            {
+                Sucesso = true,
+                Dados = AgenciaDA.GetBySigla(sigla)
+            };
+        }
     }
 }
