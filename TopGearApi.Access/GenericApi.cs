@@ -10,7 +10,9 @@ namespace TopGearApi.Access
 {
     public class GenericApi
     {
-        protected static string Token = ConfigurationManager.AppSettings["Token"];
+        protected GenericApi() { }
+
+        protected static readonly string Token = ConfigurationManager.AppSettings["Token"];
         protected static readonly HttpClient client = new HttpClient
         {
             BaseAddress = new Uri(ConfigurationManager.AppSettings["baseUrlTeste"])

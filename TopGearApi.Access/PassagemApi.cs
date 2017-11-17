@@ -10,9 +10,9 @@ using TopGearApi.Access.PassagemModels;
 
 namespace TopGearApi.Access
 {
-    public class PassagemApi
+    public static class PassagemApi
     {
-        private static string urlBase = "http://viniciuszorzanelli.com/Source/Slim/api.php/";
+        private static readonly string urlBase = "http://viniciuszorzanelli.com/Source/Slim/api.php/";
 
         public static List<Voo> GetTodosVoos()
         {
