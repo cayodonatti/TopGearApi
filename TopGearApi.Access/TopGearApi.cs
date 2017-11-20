@@ -50,7 +50,7 @@ namespace TopGearApi.Access
             HttpRequestMessage request = new HttpRequestMessage
             {
                 Content = new StringContent(JsonConvert.SerializeObject(MakeBase()), Encoding.UTF8, "application/json"),
-                Method = HttpMethod.Get,
+                Method = HttpMethod.Post,
                 RequestUri = new Uri(client.BaseAddress + relativePath)
             };
 
@@ -71,7 +71,7 @@ namespace TopGearApi.Access
             HttpRequestMessage request = new HttpRequestMessage
             {
                 Content = new StringContent(JsonConvert.SerializeObject(MakeBase()), Encoding.UTF8, "application/json"),
-                Method = HttpMethod.Get,
+                Method = HttpMethod.Post,
                 RequestUri = new Uri(client.BaseAddress + relativePath + "/PorId/" + id.ToString())
             };
 
