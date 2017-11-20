@@ -10,15 +10,17 @@ using TopGearApi.Domain.Models;
 namespace TopGearApi.Test
 {
     [TestClass]
-    public class ClienteControllerTest : BaseControllerTest<Cliente>
+    public class ClienteControllerTest
     {
+        protected string path;
+
         public ClienteControllerTest()
         {
             this.path = "cliente";
         }
 
         [TestMethod]
-        public new void Get()
+        public void Get()
         {
             var response = TopGearApi<List<Cliente>>.GetAuth(path);
             Assert.IsTrue(response.Sucesso);
@@ -48,6 +50,30 @@ namespace TopGearApi.Test
             this.Update(Id, c);
 
             this.Delete(Id);
+        }
+
+        protected int Post(Cliente obj)
+        {
+            var response = TopGearApi<Cliente>.Post(obj, path);
+            Assert.IsTrue(response.Sucesso);
+
+            return response.Dados;
+        }
+
+        protected void Update(int Id, Cliente obj)
+        {
+            var response = TopGearApi<Cliente>.Put(obj, Id, path);
+            Assert.IsTrue(response.Sucesso);
+        }
+
+        protected void Delete(int Id)
+        {
+            var response = TopGearApi<Cliente>.Delete(Id, path);
+            Assert.IsTrue(response.Sucesso);
+
+            var response2 = TopGearApi<Cliente>.Get(Id, path);
+            Assert.IsTrue(response2.Sucesso);
+            Assert.IsNull(response2.Dados);
         }
     }
 }
