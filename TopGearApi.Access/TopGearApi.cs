@@ -42,6 +42,48 @@ namespace TopGearApi.Access
             else return new Response<T> { Sucesso = false };
         }
 
+        public static Response<T> GetAuth(string relativePath)
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpRequestMessage request = new HttpRequestMessage
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(MakeBase()), Encoding.UTF8, "application/json"),
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(client.BaseAddress + relativePath)
+            };
+
+            HttpResponseMessage response = client.SendAsync(request).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<Response<T>>().Result;
+            }
+            else return new Response<T> { Sucesso = false };
+        }
+
+        public static Response<T> GetAuth(int id, string relativePath)
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpRequestMessage request = new HttpRequestMessage
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(MakeBase()), Encoding.UTF8, "application/json"),
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(client.BaseAddress + relativePath + "/PorId/" + id.ToString())
+            };
+
+            HttpResponseMessage response = client.SendAsync(request).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsAsync<Response<T>>().Result;
+                return result;
+            }
+            else return new Response<T> { Sucesso = false };
+        }
+
         public static Response<int> Post(T objeto, string relativePath)
         {
             client.DefaultRequestHeaders.Accept.Clear();
@@ -95,6 +137,14 @@ namespace TopGearApi.Access
         protected static Request<T> MakeRequest(T dados)
         {
             return new Request<T> { Dados = dados, Token = Token };
+        }
+
+        protected static BaseRequest MakeBase()
+        {
+            return new BaseRequest
+            {
+                Token = Token
+            };
         }
 
         public static string GetToken()

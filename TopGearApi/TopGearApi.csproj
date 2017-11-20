@@ -147,12 +147,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AgenciaController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LocacaoController.cs" />
     <Compile Include="Controllers\MensagemController.cs" />
+    <Compile Include="Controllers\TAuthController.cs" />
     <Compile Include="Controllers\TController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

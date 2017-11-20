@@ -11,7 +11,7 @@ using TopGearApi.Models;
 namespace TopGearApi.Controllers
 {
     [AllowAnonymous]
-    public class ClienteController : TController<Cliente>
+    public class ClienteController : TAuthController<Cliente>
     {
         [HttpPost]
         [ActionName("Login")]

@@ -11,7 +11,7 @@ using TopGearApi.Models;
 namespace TopGearApi.Controllers
 {
     [AllowAnonymous]
-    public abstract class TController<T> : ApiController where T : class, IEntity
+    public abstract class TController<T> : BaseController where T : class, IEntity
     {
         // GET: api/T
         public Response<IEnumerable<T>> Get()
@@ -53,7 +53,8 @@ namespace TopGearApi.Controllers
                 value.Dados.Id = id;
                 TopGearDA<T>.Update(value.Dados);
                 return new Response<T> { Sucesso = true };
-            } else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
+            }
+            else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }
 
         // DELETE: api/T
@@ -61,7 +62,8 @@ namespace TopGearApi.Controllers
         {
             if (value != null && IsValid(value.Token))
             {
-                try {
+                try
+                {
                     TopGearDA<T>.Delete(value.Dados);
                 }
                 catch (Exception ex)
@@ -69,7 +71,8 @@ namespace TopGearApi.Controllers
                     return new Response<T> { Sucesso = false, Mensagem = ex.Message };
                 }
                 return new Response<T> { Sucesso = true };
-            } else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
+            }
+            else return new Response<T> { Sucesso = false, Mensagem = "O Request está sem dados ou o Token é inválido!" };
         }
 
         [NonAction]
