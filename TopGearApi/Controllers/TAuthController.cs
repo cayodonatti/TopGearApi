@@ -12,6 +12,7 @@ namespace TopGearApi.Controllers
 {
     public class TAuthController<T> : BaseController where T : class, IEntity
     {
+        [HttpPost]
         public Response<IEnumerable<T>> Get([FromBody] BaseRequest req)
         {
             return new Response<IEnumerable<T>>
@@ -23,6 +24,7 @@ namespace TopGearApi.Controllers
 
         // GET: api/T/PorId/5
         [ActionName("PorId")]
+        [HttpPost]
         public Response<T> Get(int id, [FromBody] BaseRequest req)
         {
             if (IsValid(req.Token))
