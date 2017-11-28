@@ -16,5 +16,13 @@ namespace TopGearApi.DataAccess
                 return context.Set<Cliente>().FirstOrDefault(c => c.CPF == CPF && c.Senha == Senha);
             }
         }
+
+        public static Cliente ObterPorEmail(string Email)
+        {
+            using (var context = GetContext())
+            {
+                return context.Set<Cliente>().FirstOrDefault(c => c.Email == Email);
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ using TopGearApi.Models;
 namespace TopGearApi.Controllers
 {
     [AllowAnonymous]
-    public class ClienteController : TController<Cliente>
+    public class ClienteController : TAuthController<Cliente>
     {
         [HttpPost]
         [ActionName("Login")]
@@ -37,6 +37,30 @@ namespace TopGearApi.Controllers
                         Mensagem = "Cliente não encontrado ou login e senha não batem"
                     };
                 }
+            }
+            else
+            {
+                return new Response<Cliente>
+                {
+                    Sucesso = false,
+                    Mensagem = "Requisição Inválida"
+                };
+            }
+        }
+
+
+        [HttpPost]
+        [ActionName("ObterPorEmail")]
+        public Response<Cliente> ObterPorEmail([FromBody] Request<string> req)
+        {
+            if (req.Dados != null && IsValid(req.Token))
+            {
+                var cli = ClienteDA.ObterPorEmail(req.Dados);
+                return new Response<Cliente>
+                {
+                    Sucesso = true,
+                    Dados = cli
+                };
             }
             else
             {

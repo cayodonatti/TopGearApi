@@ -32,7 +32,7 @@ namespace TopGearApi.Test
             Locacao l = new Locacao
             {
                 CarroId = carros.First().Id,
-                ClienteId = TopGearApi<List<Cliente>>.Get("cliente").Dados.First().Id,
+                ClienteId = TopGearApi<List<Cliente>>.GetAuth("cliente").Dados.First().Id,
                 Agencia_EntregaId = TopGearApi<List<Agencia>>.Get("agencia").Dados.First().Id,
                 Agencia_RetiradaId = TopGearApi<List<Agencia>>.Get("agencia").Dados.First().Id,
                 Retirada = new DateTime(2017, 10, 15),
