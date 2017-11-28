@@ -46,5 +46,31 @@ namespace TopGearApi.Controllers
                 };
             }
         }
+
+        [HttpPost]
+        [ActionName("ObterDisponiveisCategorias")]
+        public CarrosComPrecoResponse ObterDisponiveisCategorias([FromBody] RequestCarrosDisponiveis req)
+        {
+            if (req.Inicial != DateTime.MinValue && req.Final != DateTime.MinValue && IsValid(req.Token))
+            {
+                var carros = CarroDA.GetDisponiveis(req.Inicial, req.Final, req.ItemId);
+                var categorias = TopGearDA<Categoria>.Get();
+
+                return new CarrosComPrecoResponse
+                {
+                    Sucesso = true,
+                    Dados = carros,
+                    Categorias = categorias
+                };
+            }
+            else
+            {
+                return new CarrosComPrecoResponse
+                {
+                    Sucesso = false,
+                    Mensagem = "Requisição Inválida"
+                };
+            }
+        }
     }
 }
