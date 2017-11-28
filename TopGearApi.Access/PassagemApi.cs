@@ -76,36 +76,48 @@ namespace TopGearApi.Access
             return response.IsSuccessStatusCode;
         }
 
-        public static bool PostCompra(int idCliente, string numCartao)
+        public static int InserirCompra(string Cartao, string Cpf)
         {
             HttpClient client = new HttpClient
             {
-                BaseAddress = new Uri(urlBase + $"inserirCompra/{numCartao}/{idCliente}")
+                BaseAddress = new Uri(urlBase + $"inserirCompra/{Cartao}/{Cpf}")
             };
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));
 
             HttpResponseMessage response = client.GetAsync("").Result;
-            var teste = response.EnsureSuccessStatusCode();
+            if (response.IsSuccessStatusCode)
+            {
+                var json = response.Content.ReadAsStringAsync().Result;
 
-            return response.IsSuccessStatusCode;
+                var id = JsonConvert.DeserializeObject<int>(json);
+
+                return id;
+            }
+            else return -1;
         }
 
-        public static bool PostTicket(int idCompra, int idVoo, int numeroAssento, int idPassageiro)
+        public static int InserirTicket(int idCompra, int idVoo, string Nome, string Cartao, string Cpf, DateTime Nascimento)
         {
             HttpClient client = new HttpClient
             {
-                BaseAddress = new Uri(urlBase + $"inserirTicket/{idCompra}/{idVoo}/{numeroAssento}/{idPassageiro}")
+                BaseAddress = new Uri(urlBase + $"inserirTicket/{idCompra}/{idVoo}/{2}/{Nome}/{Cpf}/{Nascimento.ToShortDateString()}")
             };
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));
 
             HttpResponseMessage response = client.GetAsync("").Result;
-            var teste = response.EnsureSuccessStatusCode();
+            if (response.IsSuccessStatusCode)
+            {
+                var json = response.Content.ReadAsStringAsync().Result;
 
-            return response.IsSuccessStatusCode;
+                var id = JsonConvert.DeserializeObject<int>(json);
+
+                return id;
+            }
+            else return -1;
         }
     }
 
