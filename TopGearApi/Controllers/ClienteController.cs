@@ -47,5 +47,29 @@ namespace TopGearApi.Controllers
                 };
             }
         }
+
+
+        [HttpPost]
+        [ActionName("ObterPorEmail")]
+        public Response<Cliente> ObterPorEmail([FromBody] Request<string> req)
+        {
+            if (req.Dados != null && IsValid(req.Token))
+            {
+                var cli = ClienteDA.ObterPorEmail(req.Dados);
+                return new Response<Cliente>
+                {
+                    Sucesso = true,
+                    Dados = cli
+                };
+            }
+            else
+            {
+                return new Response<Cliente>
+                {
+                    Sucesso = false,
+                    Mensagem = "Requisição Inválida"
+                };
+            }
+        }
     }
 }

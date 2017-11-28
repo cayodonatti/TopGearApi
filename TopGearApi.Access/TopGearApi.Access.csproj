@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarroApi.cs" />
+    <Compile Include="ClienteApi.cs" />
     <Compile Include="GenericApi.cs" />
     <Compile Include="MensagemConector.cs" />
     <Compile Include="PassagemApi.cs" />
