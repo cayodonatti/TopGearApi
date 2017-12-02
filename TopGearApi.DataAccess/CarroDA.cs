@@ -39,12 +39,12 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                var carros = from c in context.Set<Carro>()
+                IQueryable<Carro> carros = from c in context.Set<Carro>()
                         select c;
 
-                var carrosDisponiveis = new List<Carro>();
+                List<Carro> carrosDisponiveis = new List<Carro>();
 
-                foreach(var c in carros)
+                foreach(Carro c in carros)
                 {
                     var l = LocacaoDA.GetAtivaByCarro(c.Id, inicial, final);
 
