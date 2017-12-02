@@ -60,22 +60,6 @@ namespace TopGearApi.Access
             else return new List<Voo>();
         }
 
-        public static bool PostCliente(string nome, string cpf, DateTime dataNascimento)
-        {
-            HttpClient client = new HttpClient
-            {
-                BaseAddress = new Uri(urlBase + $"inserirPassageiro/{nome}/{cpf}/{dataNascimento.ToString()}")
-            };
-
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));
-
-            HttpResponseMessage response = client.GetAsync("").Result;
-            var teste = response.EnsureSuccessStatusCode();
-
-            return response.IsSuccessStatusCode;
-        }
-
         public static int InserirCompra(string Cartao, string Cpf)
         {
             HttpClient client = new HttpClient

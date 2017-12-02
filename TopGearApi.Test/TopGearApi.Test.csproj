@@ -78,6 +78,7 @@
     <Compile Include="ClienteControllerTest.cs" />
     <Compile Include="ItemControllerTest.cs" />
     <Compile Include="LocacaoControllerTest.cs" />
+    <Compile Include="PassagemApiTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
