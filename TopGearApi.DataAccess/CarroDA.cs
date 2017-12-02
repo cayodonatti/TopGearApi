@@ -39,8 +39,7 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                IQueryable<Carro> carros = from c in context.Set<Carro>()
-                        select c;
+                IEnumerable<Carro> carros = (from c in context.Set<Carro>() select c);
 
                 List<Carro> carrosDisponiveis = new List<Carro>();
 
