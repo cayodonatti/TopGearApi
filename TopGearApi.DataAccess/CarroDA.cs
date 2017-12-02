@@ -43,12 +43,12 @@ namespace TopGearApi.DataAccess
 
                 List<Carro> carrosDisponiveis = new List<Carro>();
 
-                foreach(Carro c in carros)
-                {
-                    var l = LocacaoDA.GetAtivaByCarro(c.Id, inicial, final);
+                //foreach(Carro c in carros)
+                //{
+                //    var l = LocacaoDA.GetAtivaByCarro(c.Id, inicial, final);
 
-                    if (l is null) carrosDisponiveis.Add(c);
-                }
+                //    if (l is null) carrosDisponiveis.Add(c);
+                //}
 
                 return carrosDisponiveis;
             }
