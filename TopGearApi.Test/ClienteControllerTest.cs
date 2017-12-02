@@ -38,9 +38,10 @@ namespace TopGearApi.Test
         {
             Cliente c = new Cliente
             {
-                CPF = "00000000272",
+                CPF = "52511015897",
                 Nome = "Teste",
-                Senha = "1234"
+                Senha = "1234",
+                Nascimento = new DateTime(1990, 10, 12)
             };
 
             var Id = this.Post(c);
@@ -71,7 +72,7 @@ namespace TopGearApi.Test
             var response = TopGearApi<Cliente>.Delete(Id, path);
             Assert.IsTrue(response.Sucesso);
 
-            var response2 = TopGearApi<Cliente>.Get(Id, path);
+            var response2 = TopGearApi<Cliente>.GetAuth(Id, path);
             Assert.IsTrue(response2.Sucesso);
             Assert.IsNull(response2.Dados);
         }

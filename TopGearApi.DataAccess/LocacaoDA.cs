@@ -9,11 +9,21 @@ namespace TopGearApi.DataAccess
 {
     public class LocacaoDA : TopGearDA<Locacao>
     {
-        public static Locacao GetAtivaByCarro(int carroId)
+        public static Locacao GetAtivaByCarro(int carroId, DateTime retirada, DateTime entrega)
         {
             using (var context = GetContext())
             {
-                return context.Set<Locacao>().Where(l => l.CarroId == carroId && !l.Finalizada && !l.Cancelada).FirstOrDefault();
+                var locacoes = context.Set<Locacao>().Where(l => l.CarroId == carroId).ToList();
+
+                foreach(var l in locacoes)
+                {
+                    if (!l.Cancelada)
+                    {
+                        if (Between(retirada, l.Retirada, l.Entrega, true) || Between(entrega, l.Retirada, l.Entrega)) return l;
+                    }
+                }
+
+                return null;
             }
         }
 

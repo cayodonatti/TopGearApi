@@ -19,7 +19,7 @@ namespace TopGearApi.Controllers
         {
             if (value != null && IsValid(value.Token))
             {
-                Locacao l = LocacaoDA.GetAtivaByCarro(value.Dados.CarroId);
+                Locacao l = LocacaoDA.GetAtivaByCarro(value.Dados.CarroId, value.Dados.Retirada, value.Dados.Entrega);
 
                 if (l == null)
                 {

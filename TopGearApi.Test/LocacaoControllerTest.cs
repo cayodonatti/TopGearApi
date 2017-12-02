@@ -23,8 +23,8 @@ namespace TopGearApi.Test
         {
             var req = new RequestCarrosDisponiveis
             {
-                Inicial = new DateTime(2017, 10, 01),
-                Final = new DateTime(2017, 10, 15),
+                Inicial = new DateTime(1973, 10, 01),
+                Final = new DateTime(1973, 10, 15),
                 Token = TopGearApi<Carro>.GetToken()
             };
 
