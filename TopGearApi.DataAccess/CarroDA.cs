@@ -39,7 +39,7 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                var carros = context.Set<Carro>().Where(c => true); 
+                var carros = context.Set<Carro>().ToList(); 
 
                 var carrosDisponiveis = new List<Carro>();
 
