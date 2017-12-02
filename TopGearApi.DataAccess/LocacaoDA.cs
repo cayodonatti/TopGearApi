@@ -13,9 +13,9 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                IEnumerable<Locacao> locacoes = context.Set<Locacao>().Where(l => l.CarroId == carroId).ToList();
+                var locacoes = context.Set<Locacao>().Where(l => l.CarroId == carroId).ToList();
 
-                foreach(Locacao l in locacoes)
+                foreach(var l in locacoes)
                 {
                     if (!l.Cancelada)
                     {
