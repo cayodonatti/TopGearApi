@@ -39,9 +39,7 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                IEnumerable<Carro> carros = (from c in context.Set<Carro>()
-                                             .Where(c => (itemId == null || c.Itens.Where( I => I.Id == itemId) == null))
-                                             select c).ToList(); 
+                IEnumerable<Carro> carros = context.Set<Carro>().Where(c => true); 
 
                 List<Carro> carrosDisponiveis = new List<Carro>();
 
