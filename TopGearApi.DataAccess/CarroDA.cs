@@ -39,16 +39,18 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                IEnumerable<Carro> carros = (from c in context.Set<Carro>() select c);
+                IEnumerable<Carro> carros = (from c in context.Set<Carro>()
+                                             .Where(c => (itemId == null || c.Itens.Where( I => I.Id == itemId) == null))
+                                             select c);
 
                 List<Carro> carrosDisponiveis = new List<Carro>();
 
-                //foreach(Carro c in carros)
-                //{
-                //    var l = LocacaoDA.GetAtivaByCarro(c.Id, inicial, final);
+                foreach (Carro c in carros)
+                {
+                    Locacao l = LocacaoDA.GetAtivaByCarro(c.Id, inicial, final);
 
-                //    if (l is null) carrosDisponiveis.Add(c);
-                //}
+                    if (l is null) carrosDisponiveis.Add(c);
+                }
 
                 return carrosDisponiveis;
             }
