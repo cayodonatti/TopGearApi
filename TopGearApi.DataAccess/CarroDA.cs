@@ -41,7 +41,7 @@ namespace TopGearApi.DataAccess
             {
                 IEnumerable<Carro> carros = (from c in context.Set<Carro>()
                                              .Where(c => (itemId == null || c.Itens.Where( I => I.Id == itemId) == null))
-                                             select c);
+                                             select c); 
 
                 List<Carro> carrosDisponiveis = new List<Carro>();
 
