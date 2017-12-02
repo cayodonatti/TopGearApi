@@ -77,5 +77,12 @@ namespace TopGearApi.DataAccess
                 return context.Set<Usuario>().Where(u => u.Token == token).ToArray().Length > 0;
             }
         }
+
+        public static bool Between(DateTime num, DateTime lower, DateTime upper, bool inclusive = false)
+        {
+            return inclusive
+                ? lower <= num && num <= upper
+                : lower < num && num < upper;
+        }
     }
 }

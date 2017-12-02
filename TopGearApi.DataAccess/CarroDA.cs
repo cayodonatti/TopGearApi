@@ -39,20 +39,19 @@ namespace TopGearApi.DataAccess
         {
             using (var context = GetContext())
             {
-                return (
-                        from c in context.Set<Carro>()
-                        join l in context.Set<Locacao>() on c equals l.Carro into cl
-                        from x in cl.DefaultIfEmpty()
-                        where (
-                                    x == null || x.Finalizada || x.Cancelada || (x.Entrega < inicial && x.Retirada > final)
-                              )
-                              &&
-                              (
-                                  itemId == null || c.Itens.FirstOrDefault(i => i.Id == itemId) != null
-                              )
-                        select c
-                        )
-                        .ToList();
+                var carros = from c in context.Set<Carro>()
+                        select c;
+
+                var carrosDisponiveis = new List<Carro>();
+
+                foreach(var c in carros)
+                {
+                    var l = LocacaoDA.GetAtivaByCarro(c.Id, inicial, final);
+
+                    if (l is null) carrosDisponiveis.Add(c);
+                }
+
+                return carrosDisponiveis;
             }
         }
     }
