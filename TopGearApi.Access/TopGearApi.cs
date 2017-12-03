@@ -134,6 +134,20 @@ namespace TopGearApi.Access
             else return new Response<T> { Sucesso = false };
         }
 
+        public static Response<T> PostId(int objeto, string relativePath)
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = client.PostAsJsonAsync(relativePath, TopGearApi<int>.MakeRequest(objeto)).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsAsync<Response<T>>().Result;
+                return result;
+            }
+            else return new Response<T> { Sucesso = false };
+        }
+
         protected static Request<T> MakeRequest(T dados)
         {
             return new Request<T> { Dados = dados, Token = Token };

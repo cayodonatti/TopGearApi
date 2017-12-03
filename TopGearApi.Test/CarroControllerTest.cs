@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TopGearApi.Access;
+using TopGearApi.DataAccess;
 using TopGearApi.Domain.Models;
 using TopGearApi.Models;
 
@@ -53,6 +54,11 @@ namespace TopGearApi.Test
             var ret = CarroApi.ObterDisponiveis(req);
             Assert.IsTrue(ret.Sucesso);
             Assert.IsNotNull(ret.Dados);
+
+            foreach(var c in ret.Dados)
+            {
+                Assert.IsNull(LocacaoDA.GetAtivaByCarro(c.Id, req.Inicial, req.Final));
+            }
         }
     }
 }
