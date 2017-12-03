@@ -48,6 +48,10 @@ namespace TopGearApi.Test
             var canceled = TopGearApi<Locacao>.PostId(Id, "Locacao/CancelarLocacao");
             Assert.IsTrue(canceled.Sucesso);
 
+            var loc = TopGearApi<Locacao>.Get(Id, "locacao");
+            Assert.IsTrue(loc.Sucesso);
+            Assert.IsTrue(loc.Dados.Cancelada);
+
             this.Delete(Id);
         }
     }

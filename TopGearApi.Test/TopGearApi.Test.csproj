@@ -40,11 +40,18 @@
     <SonarQubeTestProject>true</SonarQubeTestProject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -89,6 +96,10 @@
     <ProjectReference Include="..\TopGearApi.Access\TopGearApi.Access.csproj">
       <Project>{9879D9CE-951F-47DF-BC5E-A89D9B7FD69E}</Project>
       <Name>TopGearApi.Access</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TopGearApi.DataAccess\TopGearApi.DataAccess.csproj">
+      <Project>{AAD388A7-9358-4A8E-A241-97D560F60900}</Project>
+      <Name>TopGearApi.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\TopGearApi.Domain\TopGearApi.Domain.csproj">
       <Project>{B3445722-CB9F-4C96-A399-E1AC7EF03524}</Project>
