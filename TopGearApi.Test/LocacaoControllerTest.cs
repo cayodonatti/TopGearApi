@@ -45,6 +45,9 @@ namespace TopGearApi.Test
             l.CarroId = carros.Last().Id;
             this.Update(Id, l);
 
+            var canceled = TopGearApi<Locacao>.PostId(Id, "Locacao/CancelarLocacao");
+            Assert.IsTrue(canceled.Sucesso);
+
             this.Delete(Id);
         }
     }
